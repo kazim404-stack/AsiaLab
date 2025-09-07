@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\backend\aboutController;
+use App\Http\Controllers\backend\AboutImageController;
 use App\Http\Controllers\backend\AdminController;
 use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\ContactController;
@@ -38,11 +39,11 @@ Route::get('/dashboard', function () {
 
 
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// });
 Route::prefix('admin')->as('admin.')->middleware(['auth', 'verified'])->group(function () {
     // authentication route
     Route::get('dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
@@ -63,6 +64,7 @@ Route::prefix('admin')->as('admin.')->middleware(['auth', 'verified'])->group(fu
     Route::resource('contacts', ContactController::class);
     Route::resource('provinces', ProvinceController::class);
     Route::resource('phones', PhoneController::class);
+     Route::resource('about.images', AboutImageController::class);
     Route::resource('about', aboutController::class);
     Route::get('get-categories', [CategoryController::class, 'getCategory'])->name('get.categories.getCategory');
     Route::resource('categories', CategoryController::class);

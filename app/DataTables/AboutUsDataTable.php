@@ -27,19 +27,25 @@ class AboutUsDataTable extends DataTable
                 return '<div class="d-flex justify-content-between ">
             <a href="' . route('admin.about.edit', $query->id) . '"  class="btn btn-primary btn-md edit-about-btn" data-bs-toggle="modal" data-bs-target="#edit-about" style="margin-right:4px;"><i class="fas fa-edit"></i></a>
             <a href="' . route('admin.about.destroy', $query->id) . '" class="btn btn-danger btn-md" id="confirmation" data-datatable_id="#aboutus-table"><i class="fas fa-trash" ></i></a>
+                 <button class="btn btn-secondary dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
+            <i class="fas fa-cog"></i>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="' . route('admin.about.images.index', $query->id) . '"><i class="fas fa-image"></i> Image</a></li>
+        </ul>
             </div>';
             })->addColumn('site_name', function ($query) {
                 return $query->generalSetting ? $query->generalSetting->site_name : '';
-            })->addColumn('image',function($query){
-                return '<img  src="'. asset($query->image) .'" alt="logo-image" width="150"/>';
-            })->addColumn('title',function($query){
-                return '<img  src="'. asset($query->image) .'" alt="logo-image" width="150"/>';
-            })->addColumn('description',function($query){
-                return $query->getTranslation('description','en');
-            })->addColumn('title',function($query){
-                return $query->getTranslation('title','en');
+            })->addColumn('title', function ($query) {
+                return '<img  src="' . asset($query->image) . '" alt="logo-image" width="150"/>';
+            })->addColumn('description', function ($query) {
+                return $query->getTranslation('description', 'en');
+            })->addColumn('title', function ($query) {
+                return $query->getTranslation('title', 'en');
             })
-            ->rawColumns(['action','image','title','description'])
+            ->rawColumns(['action', 'image', 'title', 'description'])
             ->setRowId('id');
     }
 
@@ -82,7 +88,6 @@ class AboutUsDataTable extends DataTable
         return [
 
             Column::make('id'),
-            Column::make('image'),
             Column::make('title'),
             Column::make('description'),
             Column::computed('action')

@@ -23,6 +23,7 @@ class HomeApiController extends Controller
     public function about(Request $request)
     {
         $lang = $request->query('lang', app()->getLocale());
+       
         $about = AboutUs::with(['aboutImages'])->where('type', 'about')->first();
         if (!$about) {
             return response()->json(['message' => 'Not found'], 404);
@@ -211,7 +212,7 @@ class HomeApiController extends Controller
     public function generalSetting(Request $request)
     {
         $lang = $request->query('lang', app()->getLocale());
-         
+
 
         $generalSetting = GeneralSetting::with(['contacts' => function ($query) {
             return $query->where('status', 1)->with(['phones', 'province']);

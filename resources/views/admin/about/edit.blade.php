@@ -1,5 +1,5 @@
 @php
-    $languages = ['en' => 'English', 'da' => 'Dari', 'pa' => 'Pashto'];
+    $languages = ['en' => 'English', 'da' => 'Dari','pa' => "Pashto"];
 @endphp
 <div class="modal fade" id="edit-about" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -23,18 +23,11 @@
                                 </div>
                             </div>
                         @endforeach
+
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label for="image" class="col-form-label">Image</label>
-                                <input type="file" class="form-control" id="image" name="image">
-                                <img id="show-image" alt="about-image" width="150">
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="mb-3">
                                 <label for="type" class="col-form-label">Type</label>
-                                <input type="text" class="form-control" id="type" name="type"
-                                    placeholder="Enter type">
+                                <input type="text" class="form-control" id="type" name="type" placeholder="Enter type">
                             </div>
                         </div>
                         @foreach ($languages as $local => $label)
@@ -42,7 +35,7 @@
                                 <div class="mb-3">
                                     <label for="description[{{ $local }}]"
                                         class="col-form-label">Description</label>
-                                    <textarea name="description[{{ $local }}]" id="description[{{ $local }}]"
+                                    <textarea name="description[{{ $local }}]" id="description-about[{{ $local }}]"
                                         placeholder="Enter description in {{ $label }}" class="form-control"></textarea>
                                 </div>
                             </div>

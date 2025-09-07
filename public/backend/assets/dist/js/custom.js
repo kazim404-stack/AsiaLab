@@ -9,7 +9,7 @@ $(document).ready(function () {
     });
 
     // Edit mode initialization
-    function loadEditEditors(response,selector) {
+    function loadEditEditors(response, selector) {
         window.availableLanguages.forEach(lang => {
             if ($(`${selector}\\[${lang}\\]`).length) {
                 const content = response?.data?.description?.[lang] || '';
@@ -735,7 +735,6 @@ $(document).ready(function () {
 
                     });
                     $("#edit-about-form [name='type']").val(response.data.type);
-                    $("#show-image").attr('src', response.data.image);
                     let actionUrl = `about/${response.data.id}`;
                     $("#edit-about-form").attr('action', actionUrl);
                 }
@@ -914,7 +913,7 @@ $(document).ready(function () {
                     $("#edit-category-form").attr('action', actionUrl);
                     let selector = "#edit-description";
                     setTimeout(() => {
-                        loadEditEditors(response,selector);
+                        loadEditEditors(response, selector);
                     }, 400);
 
                 }
@@ -1468,7 +1467,7 @@ $(document).ready(function () {
                     // });
                     let selector = "#edit-description";
                     setTimeout(() => {
-                        loadEditEditors(response,selector);
+                        loadEditEditors(response, selector);
                     }, 400);
                 }
             },
@@ -2215,6 +2214,73 @@ $(document).ready(function () {
                 }
             }
         })
+    });
+
+    // Store about image
+    $(document).on('click', '#store-about-image', function (e) {
+        e.preventDefault();
+        let form = $('#about-image-form');
+        let data = new FormData(form[0]);
+        let btn = $(this);
+        let getUrl = form.attr('action');
+        let modal = $('#create-about-image');
+        btn.prop('disabled', true);
+        $.ajax({
+            url: getUrl,
+            type: 'post',
+            processData: false,
+            contentType: false,
+            data: data,
+            success: function (response) {
+                if (response.status == "success") {
+
+                    btn.prop('disabled', false);
+                    form[0].reset();
+                    modal.modal('hide');
+                    toastr.success(response.message);
+                    window.location.reload();
+                }
+
+            }, error: function (xhr) {
+                btn.prop('disabled', false);
+
+                if (xhr.status === 422) {
+                    modal.modal('show');
+                    $('.text-danger').remove(); // Clear all old error messages
+
+                    let errors = xhr.responseJSON.errors;
+
+                    $.each(errors, function (key, value) {
+                        let fieldName;
+
+                        // Convert dot notation to array format: address.en => address[en]
+                        if (key.includes('.')) {
+                            const parts = key.split('.');
+                            fieldName = parts.shift() + '[' + parts.join('][') + ']';
+                        } else {
+                            fieldName = key;
+                        }
+
+                        if (fieldName === 'image' || fieldName.startsWith('image[')) {
+                            fieldName = 'image[]';
+                        }
+
+
+
+
+                        // Select by name attribute
+                        const inputField = $(`[name="${fieldName}"]`);
+
+                        if (inputField.length > 0) {
+                            inputField.next('.text-danger').remove();
+                            inputField.after(`<p class="text-danger">${value[0]}</p>`);
+                        } else {
+                            console.warn('Field not found:', fieldName);
+                        }
+                    });
+                }
+            }
+        });
     });
 
 

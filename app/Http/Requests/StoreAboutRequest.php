@@ -31,7 +31,7 @@ class StoreAboutRequest extends FormRequest
             'description.en' => 'required|string',
             'description.da' => 'required|string',
             'description.pa' => 'required|string',
-            'image' => 'required|image|mimes:jpg,jpeg,png,webp|max:2048',
+            // 'image' => 'required|image|mimes:jpg,jpeg,png,webp|max:2048',
         ];
     }
 
@@ -43,10 +43,10 @@ class StoreAboutRequest extends FormRequest
             'title.*.required' => 'Each language version of the title is required.',
             'description.required' => 'The description is required.',
             'description.*.required' => 'Each language version of the description is required.',
-            'image.required' => 'The image is required.',
-            'image.image' => 'The file must be an image.',
-            'image.mimes' => 'Only jpg, jpeg, png, and webp formats are allowed.',
-            'image.max' => 'The image size must not exceed 2MB.',
+            // 'image.required' => 'The image is required.',
+            // 'image.image' => 'The file must be an image.',
+            // 'image.mimes' => 'Only jpg, jpeg, png, and webp formats are allowed.',
+            // 'image.max' => 'The image size must not exceed 2MB.',
             'type.string' => 'The type must be a valid string.',
             'type.max' => 'The type may not be greater than 255 characters.',
         ];

@@ -23,13 +23,8 @@
                                 </div>
                             </div>
                         @endforeach
+
                         <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="image" class="col-form-label">Image</label>
-                                <input type="file" class="form-control" id="image" name="image">
-                            </div>
-                        </div>
-                        <div class="col-md-12">
                             <div class="mb-3">
                                 <label for="type" class="col-form-label">Type</label>
                                 <input type="text" class="form-control" id="type" name="type" placeholder="Enter Type">
@@ -40,7 +35,7 @@
                                 <div class="mb-3">
                                     <label for="description[{{ $local }}]"
                                         class="col-form-label">Description</label>
-                                    <textarea name="description[{{ $local }}]" id="description[{{ $local }}]"
+                                    <textarea name="description[{{ $local }}]" id="description-about[{{ $local }}]"
                                         placeholder="Enter description in {{ $label }}" class="form-control"></textarea>
                                 </div>
                             </div>

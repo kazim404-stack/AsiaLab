@@ -11,8 +11,11 @@ class AboutUs extends Model
     protected $fillable = [
         "title",
         "description",
-        "image",
         "type",
     ];
     public $translatable = ['title', 'description'];
+    public function aboutImages(){
+        return $this->hasMany(AboutImage::class);
+    }
+
 }
