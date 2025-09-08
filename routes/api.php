@@ -17,7 +17,7 @@ Route::middleware([LocalizationMiddleware::class])->group(function () {
     Route::get('sliders', [HomeApiController::class, 'slider'])->name('get.slider');
 
     Route::get('category', [HomeApiController::class, 'category'])->name('get.category');
-      Route::get('category-tests/{categoryId}', [HomeApiController::class, 'categoryTests'])->name('get.category.test');
+    Route::get('category-tests/{categoryId}', [HomeApiController::class, 'categoryTests'])->name('get.category.test');
     Route::get('test/{testId}', [HomeApiController::class, 'test'])->name('get.test');
     Route::get('general-settings', [HomeApiController::class, 'generalSetting'])->name('get.generalSetting');
     Route::get('contact', [HomeApiController::class, 'contact'])->name('get.contact');
@@ -26,4 +26,6 @@ Route::middleware([LocalizationMiddleware::class])->group(function () {
     Route::get('faq', [HomeApiController::class, 'faq'])->name('get.testimonail');
     Route::post("contact", [HomeApiController::class, 'sendContact'])->name('send.contact');
     Route::get("search", [HomeApiController::class, 'search'])->name('search');
+    Route::get("gallery", [HomeApiController::class, 'gallery'])->name('gallery');
+    Route::get("machine", [HomeApiController::class, 'machine'])->name('machine');
 });

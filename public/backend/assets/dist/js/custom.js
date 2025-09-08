@@ -2051,7 +2051,6 @@ $(document).ready(function () {
                     $.each(errors, function (key, value) {
                         let fieldName;
 
-                        // Convert dot notation to array format: address.en => address[en]
                         if (key.includes('.')) {
                             const parts = key.split('.');
                             fieldName = parts.shift() + '[' + parts.join('][') + ']';
@@ -2059,7 +2058,11 @@ $(document).ready(function () {
                             fieldName = key;
                         }
 
-                        // Select by name attribute
+                        // ✅ Fix for image[]
+                        if (fieldName === 'image') {
+                            fieldName = 'image[]';
+                        }
+
                         const inputField = $(`[name="${fieldName}"]`);
 
                         if (inputField.length > 0) {
@@ -2073,7 +2076,70 @@ $(document).ready(function () {
             }
         });
     });
+    // Store photo
+    $(document).on('click', '#store-photo', function (e) {
+        e.preventDefault();
+        let form = $('#photo-form');
+        let data = new FormData(form[0]);
+        let btn = $(this);
+        let getUrl = form.attr('action');
+        let modal = $('#create-photo');
+        btn.prop('disabled', true);
+        $.ajax({
+            url: getUrl,
+            type: 'post',
+            processData: false,
+            contentType: false,
+            data: data,
+            success: function (response) {
+                if (response.status == "success") {
 
+                    btn.prop('disabled', false);
+                    form[0].reset();
+                    modal.modal('hide');
+                    toastr.success(response.message);
+                    window.location.reload();
+                }
+
+            }, error: function (xhr) {
+                btn.prop('disabled', false);
+
+                if (xhr.status === 422) {
+                    modal.modal('show');
+                    $('.text-danger').remove(); // Clear all old error messages
+
+                    let errors = xhr.responseJSON.errors;
+
+                    $.each(errors, function (key, value) {
+                        let fieldName;
+
+                        if (key.includes('.')) {
+                            const parts = key.split('.');
+                            fieldName = parts.shift() + '[' + parts.join('][') + ']';
+                        } else {
+                            fieldName = key;
+                        }
+
+                        // ✅ Fix for image[]
+                        if (fieldName === 'image') {
+                            fieldName = 'image[]';
+                        }
+
+                        const inputField = $(`[name="${fieldName}"]`);
+
+                        if (inputField.length > 0) {
+                            inputField.next('.text-danger').remove();
+                            inputField.after(`<p class="text-danger">${value[0]}</p>`);
+                        } else {
+                            console.warn('Field not found:', fieldName);
+                        }
+                    });
+
+                }
+            }
+        });
+    });
+    // store province
     $(document).on('click', '#store-province', function (e) {
         e.preventDefault();
         let form = $('#province-form');

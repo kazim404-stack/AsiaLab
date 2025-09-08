@@ -12,6 +12,7 @@ use App\Http\Controllers\backend\KeyValueController;
 use App\Http\Controllers\backend\MachineImagesController;
 use App\Http\Controllers\backend\MethodControllr;
 use App\Http\Controllers\backend\PhoneController;
+use App\Http\Controllers\backend\PhotoController;
 use App\Http\Controllers\backend\ProvinceController;
 use App\Http\Controllers\backend\SliderController;
 use App\Http\Controllers\Backend\SliderImageController;
@@ -77,6 +78,7 @@ Route::prefix('admin')->as('admin.')->middleware(['auth', 'verified'])->group(fu
     Route::resource('key-values', KeyValueController::class);
     Route::resource('testimonails', TestimonailController::class);
     Route::resource('faqs', FaqController::class);
+    Route::resource('photos',PhotoController::class);
 });
 
 require __DIR__ . '/auth.php';

@@ -10,6 +10,7 @@ use App\Models\Contact;
 use App\Models\Faq;
 use App\Models\GeneralSetting;
 use App\Models\KeyValue;
+use App\Models\Photo;
 use App\Models\Slider;
 use App\Models\Test;
 use App\Models\Testimonail;
@@ -359,5 +360,15 @@ class HomeApiController extends Controller
             "status" => "success",
             "data" => $products
         ]);
+    }
+    public function gallery()
+    {
+        $gallery = Photo::where('type', 'gallery')->get();
+        return response()->json(["status" => "success", "data" => $gallery]);
+    }
+    public function machine()
+    {
+        $machine = Photo::where('type', 'machine')->get();
+        return response()->json(["status" => "success", "data" => $machine]);
     }
 }
