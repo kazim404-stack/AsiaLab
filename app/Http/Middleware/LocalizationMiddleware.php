@@ -15,14 +15,23 @@ class LocalizationMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        $locale = $request->query('lang')
-            ?? $request->header('Accept-Language')
-            ?? config('app.locale');
+        $locale = session('locale', config('app.locale'));
 
         if (in_array($locale, array_keys(config('languages')))) {
             app()->setLocale($locale);
+        } else {
+            app()->setLocale(config('app.locale'));
         }
 
         return $next($request);
+        // $locale = $request->query('lang')
+        //     ?? $request->header('Accept-Language')
+        //     ?? config('app.locale');
+
+        // if (in_array($locale, array_keys(config('languages')))) {
+        //     app()->setLocale($locale);
+        // }
+
+        // return $next($request);
     }
 }

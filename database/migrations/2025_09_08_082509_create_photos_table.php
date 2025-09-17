@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('photos', function (Blueprint $table) {
             $table->id();
             $table->string('image');
-            $table->enum('type',['gallery','machine']);
+            $table->enum('type',['gallery','machine','company']);
             $table->timestamps();
         });
     }

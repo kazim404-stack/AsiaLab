@@ -1,5 +1,5 @@
 @php
-    $languages = ['en' => 'English', 'da' => 'Dari','pa' => "Pashto"];
+    $languages = ['en' => 'English', 'da' => 'Dari', 'pa' => 'Pashto'];
 @endphp
 <div class="modal fade" id="create-category" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
@@ -24,6 +24,12 @@
                                 </div>
                             </div>
                         @endforeach
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="fa_icon" class="col-form-label">fa icon</label>
+                                <input type="text" class="form-control" id="fa_icon" name="fa_icon" placeholder="Enter fa icon">
+                            </div>
+                        </div>
                         <div class="col-md-4">
                             <div class="mb-3">
                                 <label for="parent_id" class="col-form-label">Category Level</label>

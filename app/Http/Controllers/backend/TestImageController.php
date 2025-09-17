@@ -14,7 +14,7 @@ class TestImageController extends Controller
      */
     public function index($testId)
     {
-        $testImages = TestImage::all();
+        $testImages = TestImage::where('test_id',$testId)->get();
         return view('admin.testImage.index', compact('testId', 'testImages'));
     }
 

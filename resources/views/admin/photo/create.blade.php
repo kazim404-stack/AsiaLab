@@ -23,6 +23,7 @@
                                     <option value="" disabled selected>Select type</option>
                                     <option value="gallery">Gallery</option>
                                     <option value="machine">Machine</option>
+                                    <option value="company">Company</option>
                                 </select>
                             </div>
                         </div>

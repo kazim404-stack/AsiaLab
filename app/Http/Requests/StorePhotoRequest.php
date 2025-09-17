@@ -23,8 +23,8 @@ class StorePhotoRequest extends FormRequest
     {
         return [
             'image'   => 'required|array',
-            'image.*' => 'required|image|mimes:jpg,jpeg,png,gif|max:2048',
-            'type'    => 'required|in:gallery,machine',
+            'image.*' => 'required|image|mimes:jpg,jpeg,png,gif,webp|max:2048',
+            'type'    => 'required|in:gallery,machine,company',
         ];
     }
     public function messages(): array
@@ -33,10 +33,10 @@ class StorePhotoRequest extends FormRequest
             'image.required'   => 'Please upload at least one image.',
             'image.array'      => 'The image field must be an array.',
             'image.*.image'    => 'Each file must be an image.',
-            'image.*.mimes'    => 'Each image must be JPG, JPEG, PNG, or GIF.',
+            'image.*.mimes'    => 'Each image must be JPG, JPEG,WEBP, PNG, or GIF.',
             'image.*.max'      => 'Each image must not exceed 2MB.',
             'type.required'    => 'Please select a type.',
-            'type.in'          => 'The type must be either gallery or machine.',
+            'type.in'          => 'The type must be either gallery,company or machine.',
         ];
     }
 }

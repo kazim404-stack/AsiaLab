@@ -24,6 +24,7 @@ class StoreCategoryRequest extends FormRequest
         return [
             'parent_id'    => 'nullable|integer',
             'name'         => 'required|array',
+            'fa_icon'         => 'nullable|string',
             'name.*'       => 'required|string|max:255',
             'description' => ['nullable', 'array'],
             'description.en' => ['nullable', 'string'],
@@ -51,6 +52,9 @@ class StoreCategoryRequest extends FormRequest
             'image.max'              => 'The image size must not exceed 2MB.',
             'status.required'        => 'The status field is required.',
             'status.boolean'         => 'The status must be true or false.',
+
+            'fa_icon.string'          => 'The fa_icon must be a string.',
+
         ];
     }
 }

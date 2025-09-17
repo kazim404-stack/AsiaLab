@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('slider_id');
             $table->string('image');
-            $table->enum('type', ['ar', 'en','pa']);
+            $table->enum('type', ['da', 'en','pa']);
             $table->timestamps();
             $table->foreign('slider_id')->references('id')->on('sliders')->onDelete('cascade');
         });

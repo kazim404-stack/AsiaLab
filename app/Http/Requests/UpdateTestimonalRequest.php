@@ -30,6 +30,7 @@ class UpdateTestimonalRequest extends FormRequest
 
             'description' => 'required|array',
             'description.*' => 'required|string',
+            'rate' => 'required|numeric',
 
             'image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
 
@@ -55,6 +56,9 @@ class UpdateTestimonalRequest extends FormRequest
             'description.array' => 'The description must be a valid JSON object.',
             'description.*.required' => 'Each description value is required.',
             'description.*.string' => 'Each description must be a string.',
+
+            'rate.required' => 'The rate field is required.',
+            'rate.numeric' => 'The rate field must be a integer.',
 
             'image.image' => 'The file must be an image.',
             'image.mimes' => 'The image must be of type: jpeg, png, jpg, or webp.',

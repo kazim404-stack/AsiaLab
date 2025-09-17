@@ -1,5 +1,5 @@
 @php
-    $languages = ['en' => 'English', 'da' => 'Dari','pa' => "Pashto"];
+    $languages = ['en' => 'English', 'da' => 'Dari', 'pa' => 'Pashto'];
 @endphp
 <div class="modal fade" id="edit-category" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
@@ -9,8 +9,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form  method="post" id="edit-category-form"
-                    enctype="multipart/form-data">
+                <form method="post" id="edit-category-form" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
 
@@ -24,6 +23,13 @@
                                 </div>
                             </div>
                         @endforeach
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="fa_icon" class="col-form-label">fa icon</label>
+                                <input type="text" class="form-control" id="fa_icon" name="fa_icon"
+                                    placeholder="Enter fa icon">
+                            </div>
+                        </div>
                         <div class="col-md-4">
                             <div class="mb-3">
                                 <label for="parent_id" class="col-form-label">Category Level</label>
@@ -48,8 +54,8 @@
                             <div class="col-md-45Z ">
                                 <div class="mb-3">
                                     <label for="description" class="col-form-label">Description</label>
-                                    <textarea name="description[{{ $local }}]" id="edit-description[{{ $local }}]" class="form-control textarea"
-                                        placeholder="Enter in description {{ $label }}" cols="3" rows="3"></textarea>
+                                    <textarea name="description[{{ $local }}]" id="edit-description[{{ $local }}]"
+                                        class="form-control textarea" placeholder="Enter in description {{ $label }}" cols="3" rows="3"></textarea>
 
                                 </div>
                             </div>

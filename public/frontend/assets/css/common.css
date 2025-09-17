@@ -1,0 +1,15 @@
+.image_block_two .image-inner .image-shape .shape-1{
+    bottom: -147px !important;
+}
+.image_block_two .image-inner .image-shape .shape-2{
+    top: -103px !important;
+}
+.category-list a:hover,
+.category-list a.active,
+.category-list a.current {
+    color: #fff !important;
+    background-color: #28a745 !important;
+    border-radius: 5px;
+}
+
+

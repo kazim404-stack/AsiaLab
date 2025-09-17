@@ -24,4 +24,5 @@ class GeneralSetting extends Model
     {
         return $this->hasMany(Contact::class);
     }
+    
 }

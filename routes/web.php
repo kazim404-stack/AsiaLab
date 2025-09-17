@@ -9,8 +9,7 @@ use App\Http\Controllers\backend\ContactController;
 use App\Http\Controllers\backend\FaqController;
 use App\Http\Controllers\backend\GeneralSettingController;
 use App\Http\Controllers\backend\KeyValueController;
-use App\Http\Controllers\backend\MachineImagesController;
-use App\Http\Controllers\backend\MethodControllr;
+
 use App\Http\Controllers\backend\PhoneController;
 use App\Http\Controllers\backend\PhotoController;
 use App\Http\Controllers\backend\ProvinceController;
@@ -19,16 +18,17 @@ use App\Http\Controllers\Backend\SliderImageController;
 use App\Http\Controllers\backend\TestController;
 use App\Http\Controllers\backend\TestImageController;
 use App\Http\Controllers\backend\TestimonailController;
+use App\Http\Controllers\frontend\HomePageController;
 use App\Http\Controllers\frontend\LocalController;
 use App\Http\Controllers\MachineController;
-use App\Http\Controllers\ProfileController;
+use App\Http\Middleware\LocalizationMiddleware;
 use Illuminate\Support\Facades\Route;
 
 Route::get('locale/{lang}', [LocalController::class, 'setLocal']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('frontend.layouts.front_master');
+// })->name('home');
 Route::get('login', [AuthenticatedSessionController::class, 'create'])
     ->name('login');
 
@@ -65,7 +65,7 @@ Route::prefix('admin')->as('admin.')->middleware(['auth', 'verified'])->group(fu
     Route::resource('contacts', ContactController::class);
     Route::resource('provinces', ProvinceController::class);
     Route::resource('phones', PhoneController::class);
-     Route::resource('about.images', AboutImageController::class);
+    Route::resource('about.images', AboutImageController::class);
     Route::resource('about', aboutController::class);
     Route::get('get-categories', [CategoryController::class, 'getCategory'])->name('get.categories.getCategory');
     Route::resource('categories', CategoryController::class);
@@ -78,7 +78,21 @@ Route::prefix('admin')->as('admin.')->middleware(['auth', 'verified'])->group(fu
     Route::resource('key-values', KeyValueController::class);
     Route::resource('testimonails', TestimonailController::class);
     Route::resource('faqs', FaqController::class);
-    Route::resource('photos',PhotoController::class);
+    Route::resource('photos', PhotoController::class);
 });
+
+// home routes
+Route::get('locale/{lang}', [LocalController::class, 'setLocal']);
+
+
+Route::middleware([LocalizationMiddleware::class])->group(function () {
+    Route::get('/', [HomePageController::class, 'home'])->name('home');
+    Route::get('about', [HomePageController::class, 'about'])->name('home.about');
+    Route::get('service', [HomePageController::class, 'service'])->name('home.service');
+    Route::get('contact', [HomePageController::class, 'contact'])->name('home.contact');
+    Route::get('gallery', [HomePageController::class, 'gallery'])->name('home.gallery');
+    Route::get('service-details/{categoryId}', [HomePageController::class, 'serviceDetails'])->name('home.service.details');
+});
+
 
 require __DIR__ . '/auth.php';

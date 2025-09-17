@@ -1,0 +1,123 @@
+
+
+
+.nice-select.open .list {
+    right: 0;
+}
+
+.nice-select .option {
+
+    padding-left: 40px;
+    padding-right: 0px;
+
+}
+
+.nice-select {
+    padding-left: 30px !important;
+    padding-right: 19px !important;
+}
+
+.main-menu li a {
+    text-decoration: none !important;
+}
+
+
+
+a {
+    text-decoration: none;
+}
+
+
+.banner-carousel {
+    direction: ltr !important;
+}
+
+.main-header .menu-right-content .search-box-outer.mr_25 {
+    margin-right: 0px !important;
+    margin-left: 25px !important;
+
+}
+
+/* .main-footer .footer-bottom .social-links li {
+    margin-right: 0px !important;
+    margin-left: 10px !important;
+
+}
+
+.main-footer .footer-bottom .social-links li a i {
+    margin-right: 11px !important;
+    margin-top: 13px !important;
+} */
+
+.text-justify {
+    text-align: justify;
+}
+
+.accordion-box .accordion .acc-btn h4 {
+    padding-left: 0px !important;
+    padding-right: 33px !important;
+}
+
+.accordion-box .accordion .acc-btn h4 span {
+    left: inherit !important;
+    right: 0px !important;
+}
+.testimonail-carousel {
+    direction: ltr !important;
+
+}
+.dots-style-one .owl-dots .owl-dot{
+    margin-right: 10px !important;
+}
+.footer-phone{
+    direction: ltr !important;
+}
+.banner-carousel .content-box{
+  text-align: right !important;
+}
+.clients-carousel{
+    direction: ltr !important;
+}
+.service-sidebar .category-widget .category-list li a:before{
+  left: inherit;
+  right: 0px;
+  transform: rotate(180deg);
+}
+
+.service-sidebar .category-widget .category-list li a:after{
+  right: inherit;
+  left: 25px;
+  transform: rotate(180deg);
+}
+
+.service-sidebar .category-widget .category-list li a:hover,
+.service-sidebar .category-widget .category-list li a.current{
+  padding-left: 30px;
+  padding-right: 20px;
+}
+.blog-sidebar .category-widget .category-list li a span{
+  float: left !important;
+}
+ .mobile-menu{
+  text-align: right !important;
+}
+
+ .mobile-menu .nav-logo{
+  text-align: right !important;
+}
+
+ .mobile-menu .navigation li > a:before{
+  left: inherit !important;
+  right: 0px !important;
+}
+
+ .mobile-menu .navigation li.dropdown .dropdown-btn{
+  right: inherit !important;
+  left: 6px !important;
+}
+
+ .mobile-menu .navigation li.dropdown .dropdown-btn.open{
+  transform: rotate(-90deg) !important;
+}
+
+

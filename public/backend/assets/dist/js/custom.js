@@ -13,6 +13,7 @@ $(document).ready(function () {
         window.availableLanguages.forEach(lang => {
             if ($(`${selector}\\[${lang}\\]`).length) {
                 const content = response?.data?.description?.[lang] || '';
+
                 initTinyMCE(`${selector}\\[${lang}\\]`, content, lang);
             }
         });
@@ -21,10 +22,11 @@ $(document).ready(function () {
         const fonts = { en: "Inter, sans-serif", da: "Vazirmatn, sans-serif", pa: "Noto Naskh Arabic, serif" };
         const dirs = { en: "ltr", da: "rtl", pa: "rtl" };
 
-        const existingEditor = tinymce.get(selector.replace('#', ''));
+        const existingEditor = tinymce.get($(selector).attr('id'));
         if (existingEditor) {
             existingEditor.remove();
         }
+
 
         tinymce.init({
             selector: selector,
@@ -900,16 +902,17 @@ $(document).ready(function () {
             success: function (response) {
                 if (response.status == "success") {
                     window.availableLanguages.forEach(function (lang) {
-                        $("#edit-category-form  [name='name[" + lang + "]']").val(response.category.name[lang] ?? '');
+                        $("#edit-category-form  [name='name[" + lang + "]']").val(response.data.name[lang] ?? '');
                         // $("#edit-category-form  [name='description[" + lang + "]']").val(description[lang] ?? '');
                     });
 
-                    $("#edit-category-form [name='status']").val(response.category.status).trigger('change');
-                    $('#show-category-image').attr('src', response.category.image);
+                    $("#edit-category-form [name='status']").val(response.data.status).trigger('change');
+                    $("#edit-category-form [name='fa_icon']").val(response.data.fa_icon);
+                    $('#show-category-image').attr('src', response.data.image);
                     let form = $("#edit-category-form");
                     let parentCateCont = form.find("#parent-category-container");
                     parentCateCont.html(response.html);
-                    let actionUrl = `categories/${response.category.id}`;
+                    let actionUrl = `categories/${response.data.id}`;
                     $("#edit-category-form").attr('action', actionUrl);
                     let selector = "#edit-description";
                     setTimeout(() => {
@@ -1944,6 +1947,7 @@ $(document).ready(function () {
                         $("#edit-testimonail-form [name='position[" + lang + "]']").val(response.data.position?.[lang] ?? '');
                     });
                     $("#edit-testimonail-form [name='status']").val(response.data.status).trigger('change');
+                    $("#edit-testimonail-form [name='rate']").val(response.data.rate).trigger('change');
                     $("#show-testimonail").attr('src', response.data.image);
                     let actionUrl = `testimonails/${response.data.id}`;
                     $("#edit-testimonail-form").attr('action', actionUrl);

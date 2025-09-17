@@ -1,5 +1,5 @@
 @php
-    $languages = ['en' => 'English', 'da' => 'Dari','pa' => "Pashto"];
+    $languages = ['en' => 'English', 'da' => 'Dari', 'pa' => 'Pashto'];
 @endphp
 <div class="modal fade" id="create-testimonail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
@@ -36,7 +36,7 @@
                                     <label for="description-{{ $local }}"
                                         class="col-form-label">Description</label>
                                     <textarea name="description[{{ $local }}]" placeholder="Enter description in {{ $label }}"
-                                        id="description[{{ $local }}]" class="form-control" cols="1" rows="1"></textarea>
+                                        id="description-testimonail[{{ $local }}]" class="form-control" cols="1" rows="1"></textarea>
                                 </div>
                             </div>
                         @endforeach
@@ -50,6 +50,18 @@
                                 </div>
                             </div>
                         @endforeach
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="rate" class="col-form-label">Rate</label>
+                                <select name="rate" id="rate" class="form-control">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div>
 
 
                         <div class="col-md-4">

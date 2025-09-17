@@ -31,6 +31,8 @@ class UpdateCategoryRequest extends FormRequest
             'description.pa' => ['nullable', 'string'],
             'image'        => 'nullable|image|mimes:jpg,jpeg,png,svg,webp|max:2048',
             'status'       => 'boolean',
+            'fa_icon'         => 'nullable|string',
+
         ];
     }
     public function messages(): array
@@ -51,6 +53,8 @@ class UpdateCategoryRequest extends FormRequest
             'image.max'              => 'The image size must not exceed 2MB.',
             'status.required'        => 'The status field is required.',
             'status.boolean'         => 'The status must be true or false.',
+
+            'fa_icon.string'          => 'The fa_icon must be a string.',
         ];
     }
 }

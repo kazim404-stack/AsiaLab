@@ -1,5 +1,6 @@
 @php
     $languages = ['en' => 'English', 'da' => 'Dari', 'pa' => 'Pashto'];
+    
 @endphp
 <div class="modal fade" id="create-contact" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">

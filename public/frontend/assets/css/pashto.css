@@ -1,0 +1,27 @@
+:root {
+    --theme-color: #37AA67;
+    --secondary-color: #0B1784;
+    --pink-color: #FFC0CB;
+    --violet-color: #7F00FF;
+    --crimson-color: #DC143C;
+    --orange-color: #FFA500;
+    --text-color: #6A6A6A;
+    --title-color: #111111;
+    --text-font: 'Noto Naskh Arabic', sans-serif;
+    --title-font: 'Noto Naskh Arabic', sans-serif;
+}
+
+body {
+    font-size: 16px !important;
+    color: var(--text-color) !important;
+    line-height: 26px !important;
+    font-weight: 400 !important;
+    background: #ffffff !important;
+    font-family: var(--text-font) !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center top !important;
+    -webkit-font-smoothing: antialiased !important;
+    direction: rtl !important;
+    text-align: right !important;
+}

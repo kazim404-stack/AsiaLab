@@ -13,6 +13,7 @@ class Testimonail extends Model
         "position",
         "description",
         "image",
+        "rate",
         "status"
     ];
     public $translatable = ["position", "name", "description"];
