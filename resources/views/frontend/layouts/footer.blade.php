@@ -81,7 +81,7 @@
                             Reserved</p>
                     @elseif(app()->getLocale() == 'da')
                         <p>کپی‌رایت &copy; @php echo date('Y') @endphp <a href="{{ route('home') }}">آسیا لب</a>، تمامی حقوق
-                          ddd  محفوظ است</p>
+                            محفوظ است</p>
                     @else
                         <p>کاپي‌رایټ &copy; @php echo date('Y') @endphp <a href="{{ route('home') }}">آسیا لب</a>، ټول حقوق محفوظ
                             دي</p>
