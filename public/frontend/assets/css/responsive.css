@@ -10,21 +10,21 @@
 
 @media only screen and (max-width: 1499px){
 
-  
+
 
 }
 
 
 @media only screen and (max-width: 1399px){
 
-  
+
 
 }
 
 
 @media only screen and (max-width: 1299px){
 
-  
+
 
 }
 
@@ -676,7 +676,7 @@
 @media only screen and (max-width: 599px){
 
   .main-header .menu-right-content{
-    display: none;
+    /* display: none; */
   }
 
   .header-top .top-inner{

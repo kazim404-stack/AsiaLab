@@ -19,7 +19,7 @@
                         @if ($generalSetting->x)
                             <li><a href="{{ $generalSetting->x }}"><i class="fab fa-twitter"></i></a></li>
                         @endif
-                        {{-- @if ($generalSetting->linkedin)
+                        @if ($generalSetting->linkedin)
                             <li><a href="{{ $generalSetting->linkedin }}"><i class="fab fa-linkedin-in"></i></a></li>
                         @endif
                         @if ($generalSetting->instagram)
@@ -33,7 +33,7 @@
                         @endif
                         @if ($generalSetting->youtube)
                             <li><a href="{{ $generalSetting->youtube }}"><i class="fab fa-youtube"></i></a></li>
-                        @endif --}}
+                        @endif
                     </ul>
                 </div>
             </div>

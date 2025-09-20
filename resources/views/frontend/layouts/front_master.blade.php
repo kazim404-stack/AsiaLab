@@ -2,61 +2,76 @@
 <html
     @if (app()->getLocale() == 'en') lang="en" dir="ltr" @elseif (app()->getLocale() == 'pa') lang="fa" dir="rtl" @else lang="ps" dir="rtl" @endif>
 
-<!-- Mirrored from azim.hostlin.com/Labout/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Aug 2025 08:59:05 GMT -->
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta name="description"
         content="Asia Lab offers trusted laboratory testing in Histology, Hematology, Pathology, Biochemistry, PCR, Microbiology, Virology, Immunology, and more.">
     <meta name="keywords"
         content="Asia Lab, Laboratory, Histology, Hematology, Pathology, Biochemistry, PCR, Microbiology, Virology, Immunology, Cytology, Parasitology, Serology, Screening, Mycology, Vaccination, Endocrinology">
-
-
-
     <title>Asia Lab</title>
-
     <!-- Fav Icon -->
     <link rel="icon" href="{{ asset('backend/assets/images/favoicon.webp') }}" type="image/webp" />
 
 
     <!-- Google Fonts -->
     @if (app()->getLocale() == 'en')
-        <link
-            href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-            rel="stylesheet">
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-            rel="stylesheet">
-    @endif
+        <!-- Preconnect to improve loading -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+        <!-- Preload -->
+        <link rel="preload" as="style"
+            href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap">
+        <link rel="preload" as="style"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap">
+
+        <!-- Async load -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+            rel="stylesheet" media="print" onload="this.media='all'">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet" media="print" onload="this.media='all'">
+    @endif
 
     @if (app()->getLocale() == 'da')
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link rel="preload" as="style"
+            href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap">
+
         <link
             href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap"
-            rel="stylesheet">
+            rel="stylesheet" media="print" onload="this.media='all'">
     @endif
+
     @if (app()->getLocale() == 'pa')
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link rel="preload" as="style"
+            href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap">
+
         <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap"
-            rel="stylesheet">
+            rel="stylesheet" media="print" onload="this.media='all'">
     @endif
 
 
 
     <!-- Stylesheets -->
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
-
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
 
     <!-- Stylesheets -->
-    <link href="{{ asset('frontend/assets/css/font-awesome-all.css') }}" rel="stylesheet">
-    <link href="{{ asset('frontend/assets/css/flaticon.css') }}" rel="stylesheet">
+    <link rel="preload" as="style" href="{{ asset('frontend/assets/css/font-awesome-all.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/font-awesome-all.css') }}" media="print"
+        onload="this.media='all'">
+    <link rel="preload" as="style" href="{{ asset('frontend/assets/css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/flaticon.css') }}" media="print"
+        onload="this.media='all'">
+
     <link href="{{ asset('frontend/assets/css/owl.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/assets/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/assets/css/jquery.fancybox.min.css') }}" rel="stylesheet">
@@ -73,15 +88,14 @@
     @yield('service')
     @yield('contact')
     <link href="{{ asset('frontend/assets/css/module-css/banner.css') }}" rel="stylesheet">
-    <link href="{{ asset('frontend/assets/css/module-css/feature.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/assets/css/module-css/about.css') }}" rel="stylesheet">
-    <link href="{{ asset('frontend/assets/css/module-css/funfact.css') }}" rel="stylesheet">
+
     <link href="{{ asset('frontend/assets/css/module-css/service.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/assets/css/module-css/clients.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/assets/css/module-css/working.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/assets/css/module-css/events.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/assets/css/module-css/cta.css') }}" rel="stylesheet">
-    <link href="{{ asset('frontend/assets/css/module-css/team.css') }}" rel="stylesheet">
+
     <link href="{{ asset('frontend/assets/css/responsive.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/assets/css/custom.css') }}" rel="stylesheet">
     @if (app()->getLocale() == 'da' || app()->getLocale() == 'pa')
@@ -92,6 +106,7 @@
     @if (app()->getLocale() == 'pa')
         <link href="{{ asset('frontend/assets/css/pashto.css') }}" rel="stylesheet">
     @endif
+    <link href="{{ asset('backend/assets/dist/css/toastr.css') }}" rel="stylesheet" />
     <link href="{{ asset('frontend/assets/css/common.css') }}" rel="stylesheet">
 
 </head>
@@ -182,7 +197,7 @@
 
 
             <!-- clients-section -->
-            @if (request()->routeIs(['home', 'home.service','home.service.details']))
+            @if (request()->routeIs(['home', 'home.service', 'home.service.details']))
                 @include('frontend.section.client_section')
                 @include('frontend.section.machine_slider')
             @endif
@@ -259,14 +274,13 @@
     <script src="{{ asset('frontend/assets/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/owl.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/wow.js') }}"></script>
-    <script src="{{ asset('frontend/assets/js/validation.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/jquery.fancybox.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/appear.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/isotope.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/parallax-scroll.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/jquery.nice-select.min.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/jQuery.style.switcher.min.js') }}"></script>
-    <script src="{{ asset('frontend/assets/js/language.js') }}"></script>
+
     <script src="{{ asset('frontend/assets/js/scrolltop.min.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/gsap.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/ScrollTrigger.js') }}"></script>
@@ -277,6 +291,27 @@
 
     <!-- main-js -->
     <script src="{{ asset('frontend/assets/js/script.js') }}"></script>
+    <script src="{{ asset('backend/assets/dist/js/toastr.js') }}"></script>
+    <script>
+        @if (Session::has('message'))
+            let type = "{{ Session::get('alert-type', 'info') }}";
+            let message = "{{ Session::get('message') }}";
+            switch (type) {
+                case 'info':
+                    toastr.info(message);
+                    break;
+                case 'success':
+                    toastr.success(message);
+                    break;
+                case 'warning':
+                    toastr.warning(message);
+                    break;
+                case 'error':
+                    toastr.error(message);
+                    break;
+            }
+        @endif
+    </script>
 
     <script src="{{ asset('frontend/assets/js/custom.js') }}"></script>
 
@@ -285,6 +320,6 @@
 
 </body><!-- End of .page_wrapper -->
 
-<!-- Mirrored from azim.hostlin.com/Labout/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Aug 2025 08:59:05 GMT -->
+
 
 </html>

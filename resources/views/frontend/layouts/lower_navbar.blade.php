@@ -8,7 +8,7 @@
               <div class="outer-box">
                   <div class="logo-box">
                       <figure class="logo"><a href="{{ route('home') }}"><img
-                                  src="{{ asset(path: $generalSetting->logo) }}" alt="Asia_lab_logo" width="75"></a>
+                                  src="{{ asset(path: $generalSetting->logo) }}" alt="Asia_lab_logo" width="75" loading="lazy"></a>
                       </figure>
                   </div>
                   <div class="menu-area">
@@ -28,13 +28,13 @@
 
                                   <li class="dropdown">
                                       <a href="{{ route('home.service') }}"
-                                          class="nav-link {{ setActive(['home.service']) }}">{{ __('message.service') }}</a>
-                                      <ul class="dropdown-menu p-4">
+                                          class="nav-link {{ setActive(['home.service','home.service.details']) }}">{{ __('message.service') }}</a>
+                                      <ul class="dropdown-menu p-4 category-bg">
                                           <div class="row text-start">
                                               <!-- Column 1 -->
                                               <div class="row text-start">
                                                   @foreach ($categories as $category)
-                                                      <div class="col-md-3 text-center">
+                                                      <div class="col-md-3 text-center category-col">
                                                           <h5 class="text-white fw-bolder">
                                                               <a href="{{ route('home.service.details',$category->id) }}"
                                                                   class="text-white mega-category">{{ $category->getTranslation('name', app()->getLocale()) }}</a>

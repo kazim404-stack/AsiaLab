@@ -41,4 +41,18 @@ return [
     "our_contact_details" => "جزئیات تماس ما",
     "our_branches" => "شعبه‌های ما",
     "find_offices_near_you" => "دفاتر ما را از نزدیک خود پیدا کنید",
+    "send_message" => "ارسال پیغام",
+    "get_in_touch" => "ارتباط بگیرید",
+    "your_name" => "نام شما",
+    "Your_email" => "ایمیل تان",
+    "phone" => "تماس",
+    "subject" => "موضوع",
+    "your_message" => "پیفام تان",
+    "ask_question" => "سوال بپرسید",
+    "type_your_keyword_and_hit" => "متن خود را تایپ کنید و اینتر را بزنید",
+    'sending' => 'در حال ارسال...',
+
+
+
+
 ];

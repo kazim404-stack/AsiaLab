@@ -42,4 +42,15 @@ return [
     "our_contact_details" => "زموږ د اړیکې جزییات",
     "our_branches" => "زموږ څانګې",
     "find_offices_near_you" => "زموږ دفترونه نږدې ځان پیدا کړئ",
+    "send_message" => "پیغام ولیږی",
+    "get_in_touch" => "اړیکه ونیسئ",
+    "your_name" => "ستاسو نوم",
+    "Your_email" => "ستاسو ایمیل",
+    "phone" => "اړیکه",
+    "subject" => "موضوع",
+    "your_message" => "ستاسو پیفام",
+    "ask_question" => "پوښتنه وکړئ",
+    "type_your_keyword_and_hit" => "خپل کليمه ټايپ کړئ او اينټر کيکاږئ",
+    'sending' => 'لیږل کېږي...',
+
 ];

@@ -14,9 +14,13 @@
             loading="eager" fetchpriority="high">
         <div class="auto-container">
             <div class="content-box">
-                <h2>{{ $category->getTranslation('name', app()->getLocale()) }}</h2>
+                @if ($products->isNotEmpty() && $products[0]->category)
+                    <h2>{{ $products[0]->category->getTranslation('name', app()->getLocale()) }}</h2>
+                @else
+                    <h2>No result</h2>
+                @endif
                 <ul class="bread-crumb">
-                    <li><a href="index.html">{{ __('message.home') }}</a></li>
+                    <li><a href="{{ route('home') }}">{{ __('message.home') }}</a></li>
                     <li>-</li>
                     <li>{{ __('message.services_details') }}</li>
                 </ul>
@@ -37,16 +41,16 @@
                             </div>
                             <div class="widget-content">
                                 <ul class="category-list clearfix nav flex-column" id="serviceTab" role="tablist">
-                                    @if ($category->tests)
-                                        @foreach ($category->tests as $index => $test)
+                                    @if ($products)
+                                        @foreach ($products as $index => $product)
                                             @php
-                                                $slug = Str::slug($test->getTranslation('name', app()->getLocale()));
+                                                $slug = Str::slug($product->getTranslation('name', app()->getLocale()));
                                             @endphp
                                             <li>
                                                 <a class="nav-link {{ $index == 0 ? 'active' : '' }}"
                                                     id="tab-{{ $slug }}" data-bs-toggle="tab"
                                                     data-bs-target="#content-{{ $slug }}" role="tab">
-                                                    {{ $test->getTranslation('name', app()->getLocale()) }}
+                                                    {{ $product->getTranslation('name', app()->getLocale()) }}
                                                 </a>
                                             </li>
                                         @endforeach
@@ -60,17 +64,17 @@
                 <!-- Content -->
                 <div class="col-lg-8 col-md-12 col-sm-12 content-side">
                     <div class="service-details-content tab-content" id="serviceTabContent">
-                        @foreach ($category->tests as $index => $test)
+                        @foreach ($products as $index => $product)
                             @php
-                                $slug = Str::slug($test->getTranslation('name', app()->getLocale()));
+                                $slug = Str::slug($product->getTranslation('name', app()->getLocale()));
                             @endphp
                             <div class="tab-pane fade {{ $index == 0 ? 'show active' : '' }}"
                                 id="content-{{ $slug }}" role="tabpanel">
                                 <div class="text-box mb_35">
-                                    <h2>{{ $test->getTranslation('name', app()->getLocale()) }}</h2>
-                                    <p>{!! $test->getTranslation('description', app()->getLocale()) !!}</p>
+                                    <h2>{{ $product->getTranslation('name', app()->getLocale()) }}</h2>
+                                    <p>{!! $product->getTranslation('description', app()->getLocale()) !!}</p>
                                 </div>
-                                @foreach ($test->testImages as $image)
+                                @foreach ($product->testImages as $image)
                                     <figure class="image-box mb_35">
                                         <img src="{{ asset($image->image) }}" alt="test-image-{{ $image->id }}"
                                             loading="lazy" width="850" height="500">
@@ -85,4 +89,3 @@
     </section>
     <!-- service-details end -->
 @endsection
-

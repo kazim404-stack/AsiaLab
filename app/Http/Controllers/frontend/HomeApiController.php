@@ -319,9 +319,9 @@ class HomeApiController extends Controller
     public function search(Request $request)
     {
         $query = $request->input('search_query');
-        $lang = $request->input('lang', 'en');
+        $lang = app()->getLocale();
 
-        $products = Test::with(['category:id,name', 'testImages:id,test_id,image'])
+        $products = Test::with(relations: ['category:id,name', 'testImages:id,test_id,image'])
             ->where(function ($q) use ($query, $lang) {
                 $lowerQuery = strtolower($query);
                 $q->whereRaw("LOWER(JSON_UNQUOTE(JSON_EXTRACT(name, '$.\"$lang\"'))) LIKE ?", ["%{$lowerQuery}%"]);
@@ -332,7 +332,7 @@ class HomeApiController extends Controller
             })
             ->take(25)
             ->orderBy('id', 'desc')
-            ->get(['id', 'category_id', 'name']);
+            ->get(['id', 'category_id', 'name','description']);
         $products->load('category:id,name');
 
         $products->transform(function ($item) use ($lang) {

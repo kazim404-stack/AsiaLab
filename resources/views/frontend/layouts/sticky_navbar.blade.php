@@ -6,7 +6,7 @@
                         <div class="outer-box">
                             <div class="logo-box">
                                 <figure class="logo"><a href="{{ route('home') }}"><img
-                                            src="{{ asset(path: $generalSetting->logo) }}" alt="Asia_lab_logo"
+                                            src="{{ asset(path: $generalSetting->logo) }}" alt="Asia_lab_logo" loading="lazy"
                                             width="75"></a>
                                 </figure>
                             </div>

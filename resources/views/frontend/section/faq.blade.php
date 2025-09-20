@@ -3,7 +3,7 @@
        @endphp
        <section class="faq-section pt_120 pb_120">
            <div class="pattern-layer">
-               <div class="pattern-1" style="background-image: url(assets/images/shape/shape-17.png);"></div>
+               <div class="pattern-1" style="background-image: url({{ asset('frontend/assets/images/shape/shape-17.png') }});"></div>
            </div>
            <div class="auto-container">
                <div class="sec-title mb_70 centred sec-title-animation animation-style2">

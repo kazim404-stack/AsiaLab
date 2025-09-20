@@ -18,7 +18,7 @@
                 </div>
             </div>
             @foreach ($keyValues as $key => $keyValue)
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="core-value-item">
                         @if ($key == 0)
                             <i class="flaticon-team {{ $icons[$key] }}"></i> <!-- Icon -->

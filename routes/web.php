@@ -90,8 +90,10 @@ Route::middleware([LocalizationMiddleware::class])->group(function () {
     Route::get('about', [HomePageController::class, 'about'])->name('home.about');
     Route::get('service', [HomePageController::class, 'service'])->name('home.service');
     Route::get('contact', [HomePageController::class, 'contact'])->name('home.contact');
+    Route::post('send-contact', [HomePageController::class, 'SendContact'])->name('home.send.contact');
     Route::get('gallery', [HomePageController::class, 'gallery'])->name('home.gallery');
     Route::get('service-details/{categoryId}', [HomePageController::class, 'serviceDetails'])->name('home.service.details');
+    Route::get('search-product', [HomePageController::class, 'search'])->name('home.search.product');
 });
 
 

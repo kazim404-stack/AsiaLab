@@ -41,6 +41,16 @@ return [
     "our_contact_details" => "Our Contact Details",
     "our_branches" => "Our Branch",
     "find_offices_near_you" => "Find our offices near you",
+    "send_message" => "Send message",
+    "get_in_touch" => "Get in Touch",
+    "your_name" => "Your name",
+    "Your_email" => "Your Email",
+    "phone" => "Phone",
+    "subject" => "Subject",
+    "your_message" => "Your Message",
+    "ask_question" => "Ask Question",
+    "type_your_keyword_and_hit" => "Type your keyword and hit",
+    "sending" => "Sending"
 
 
 

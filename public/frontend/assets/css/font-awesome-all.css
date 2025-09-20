@@ -6163,7 +6163,9 @@ readers do not read off random characters that represent icons */
   font-weight: normal;
   font-display: auto;
   src: url("../fonts/fa-brands-400.eot");
-  src: url("../fonts/fa-brands-400.eot@") format("embedded-opentype"), url("../fonts/fa-brands-400.woff2") format("woff2"), url("../fonts/fa-brands-400.woff") format("woff"), url("../fonts/fa-brands-400.ttf") format("truetype"), url("https://azim.hostlin.com/Labout/assets/fonts/fa-brands-400.svg") format("svg"); }
+  src: url("../fonts/fa-brands-400.eot@") format("embedded-opentype"), url("../fonts/fa-brands-400.woff2") format("woff2"), url("../fonts/fa-brands-400.woff") format("woff"), url("../fonts/fa-brands-400.ttf") format("truetype"), url("https://azim.hostlin.com/Labout/assets/fonts/fa-brands-400.svg") format("svg");
+      font-display: swap !important;
+}
 
 .fab {
   font-family: 'Font Awesome 5 Brands'; }
@@ -6173,7 +6175,7 @@ readers do not read off random characters that represent icons */
   font-weight: 300;
   font-display: auto;
   src: url("https://azim.hostlin.com/Labout/assets/fonts/fa-light-300.eot");
-  src: url("https://azim.hostlin.com/Labout/assets/fonts/fa-light-300.eot?") format("embedded-opentype"), url("../fonts/fa-light-300.woff2") format("woff2"), url("../fonts/fa-light-300.woff") format("woff"), url("https://azim.hostlin.com/Labout/assets/fonts/fa-light-300.ttf") format("truetype"), url("https://azim.hostlin.com/Labout/assets/fonts/fa-light-300.svg") format("svg"); }
+  src: url("https://azim.hostlin.com/Labout/assets/fonts/fa-light-300.eot?") format("embedded-opentype"), url("../fonts/fa-light-300.woff2") format("woff2"), url("../fonts/fa-light-300.woff") format("woff"), url("https://azim.hostlin.com/Labout/assets/fonts/fa-light-300.ttf") format("truetype"), url("https://azim.hostlin.com/Labout/assets/fonts/fa-light-300.svg") format("svg");  font-display: swap !important; }
 
 .fal {
   font-family: 'Font Awesome 5 Pro';
@@ -6184,7 +6186,7 @@ readers do not read off random characters that represent icons */
   font-weight: 400;
   font-display: auto;
   src: url("../fonts/fa-regular-400.eot");
-  src: url("../fonts/fa-regular-400.eot@") format("embedded-opentype"), url("../fonts/fa-regular-400.woff2") format("woff2"), url("../fonts/fa-regular-400.woff") format("woff"), url("https://azim.hostlin.com/Labout/assets/fonts/fa-regular-400.ttf") format("truetype"), url("https://azim.hostlin.com/Labout/assets/fonts/fa-regular-400.svg") format("svg"); }
+  src: url("../fonts/fa-regular-400.eot@") format("embedded-opentype"), url("../fonts/fa-regular-400.woff2") format("woff2"), url("../fonts/fa-regular-400.woff") format("woff"), url("https://azim.hostlin.com/Labout/assets/fonts/fa-regular-400.ttf") format("truetype"), url("https://azim.hostlin.com/Labout/assets/fonts/fa-regular-400.svg") format("svg");  font-display: swap !important; }
 
 .far {
   font-family: 'Font Awesome 5 Pro';
@@ -6195,7 +6197,11 @@ readers do not read off random characters that represent icons */
   font-weight: 900;
   font-display: auto;
   src: url("https://azim.hostlin.com/Labout/assets/fonts/fa-solid-900.eot");
-  src: url("https://azim.hostlin.com/Labout/assets/fonts/fa-solid-900.eot?") format("embedded-opentype"), url("../fonts/fa-solid-900.woff2") format("woff2"), url("../fonts/fa-solid-900.woff") format("woff"), url("https://azim.hostlin.com/Labout/assets/fonts/fa-solid-900.ttf") format("truetype"), url("https://azim.hostlin.com/Labout/assets/fonts/fa-solid-900.svg") format("svg"); }
+  src: url("https://azim.hostlin.com/Labout/assets/fonts/fa-solid-900.eot?")
+   format("embedded-opentype"), url("../fonts/fa-solid-900.woff2") format("woff2"),
+    url("../fonts/fa-solid-900.woff") format("woff"), url("https://azim.hostlin.com/Labout/assets/fonts/fa-solid-900.ttf")
+    format("truetype"), url("https://azim.hostlin.com/Labout/assets/fonts/fa-solid-900.svg") format("svg");
+  font-display: swap !important;}
 
 .fa,
 .fas {

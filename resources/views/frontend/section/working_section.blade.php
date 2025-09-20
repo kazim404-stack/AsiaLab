@@ -1,6 +1,6 @@
             <section class="working-section centred pt_120 pb_80">
                 <div class="bg-layer parallax-bg" data-parallax='{"y": 100}'
-                    style="background-image: url(frontend/assets/images/background/working-bg.jpg);"></div>
+                    style="background-image: url({{ asset('frontend/assets/images/background/working-bg.jpg') }});"></div>
                 <div class="auto-container">
                     <div class="sec-title light mb_60 sec-title-animation animation-style2">
                         <span class="sub-title mb_20 title-animation">{{ __('message.working_process') }}</span>

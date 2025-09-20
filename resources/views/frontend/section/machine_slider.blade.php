@@ -16,9 +16,9 @@
                          <div class="outer-container">
                              <div class="clients-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
                                  @foreach ($machines as $machine)
-                                     <figure class="clients-logo"><a href="index.html"><img loading="lazy" style="width: 200px !important;"
+                                     <figure class="clients-logo"><img loading="lazy" style="width: 200px !important;"
                                                  src="{{ asset($machine->image) }}"
-                                                 alt="company-logo-{{ $machine->id }}"></a>
+                                                 alt="company-logo-{{ $machine->id }}">
                                      </figure>
                                  @endforeach
                              </div>

@@ -5,8 +5,8 @@
           <div class="outer-container">
               <div class="clients-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
                   @foreach ($pohtos as $photo)
-                      <figure class="clients-logo"><a href="index.html"><img
-                                  src="{{ asset($photo->image) }}" alt="company-logo-{{ $photo->id }}" loading="lazy"></a>
+                      <figure class="clients-logo"><img
+                                  src="{{ asset($photo->image) }}" alt="company-logo-{{ $photo->id }}" loading="lazy">
                       </figure>
                   @endforeach
               </div>

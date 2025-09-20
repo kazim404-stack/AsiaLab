@@ -27,7 +27,4 @@
     </section>
     <!-- page-title end -->
 @endsection
-@section('about-js-links')
-    <script src="{{ asset('frontend/assets/js/particles.min.js') }}"></script>
-    <script src="{{ asset('frontend/assets/js/particles-config.js') }}"></script>
-@endsection
+

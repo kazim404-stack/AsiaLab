@@ -16,7 +16,7 @@
         <img class="bg-layer" src="{{ asset('frontend/assets/images/background/page-title-5.jpg') }}" alt="about-title-1"
             loading="eager" fetchpriority="high">
         <div class="overlay"></div>
-        <img class="pattern-layer" src="{{ asset('frontend/assets/images/shape/shape-53.png') }}" alt="about-title-1"
+        <img class="pattern-layer" src="{{ asset('frontend/assets/images/shape/shape-53.png') }}" alt="about-title-2"
             loading="eager" fetchpriority="high">
         <div class="auto-container">
             <div class="content-box">
@@ -50,7 +50,7 @@
                             <!-- Branch 1 -->
                             @foreach ($generalSettings as $generalSetting)
                                 @foreach ($generalSetting->contacts as $contact)
-                                    <div class="col-md-4">
+                                    <div class="col-lg-4 col-md-6 col-sm-12">
                                         <div class="card h-100 shadow-sm border-0">
                                             <div class="card-body text-center p-4">
                                                 <div class="mb-3">
@@ -58,14 +58,21 @@
                                                 </div>
                                                 <h5 class="card-title fw-bold">{{ $contact->province->province }}</h5>
                                                 @foreach ($contact->phones as $phone)
-                                                  <p class="card-text mb-2"><i class="fas fa-phone me-2 text-success"></i>{{ $phone->phone_number }}</p>
-
+                                                    @if (app()->getLocale() == 'en')
+                                                        <p class="card-text mb-2"><i
+                                                                class="fas fa-phone me-2 text-success"></i>{{ $phone->phone_number }}
+                                                        </p>
+                                                    @else
+                                                        <p class="card-text mb-2" style="direction: ltr !important;">
+                                                            {{ $phone->phone_number }} <i
+                                                                class="fas fa-phone me-2 text-success"></i></p>
+                                                    @endif
                                                 @endforeach
 
                                                 <p class="card-text mb-2"><i class="fas fa-envelope me-2 text-primary"></i>
                                                     {{ $contact->email }}</p>
                                                 <p class="card-text"><i class="fas fa-location-dot me-2 text-danger"></i>
-                                                    {{ $contact->getTranslation('address',app()->getLocale()) }}</p>
+                                                    {{ $contact->getTranslation('address', app()->getLocale()) }}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -99,30 +106,48 @@
     <section class="contact-section pt_120 pb_180">
         <div class="auto-container">
             <div class="sec-title centred mb_70 sec-title-animation animation-style2">
-                <span class="sub-title mb_20 title-animation">Send Message</span>
-                <h2 class="title-animation">Get in Touch</h2>
+                <span class="sub-title mb_20 title-animation">{{ __('message.send_message') }}</span>
+                <h2 class="title-animation">{{ __('message.get_in_touch') }}</h2>
             </div>
             <div class="form-inner">
-                <form method="post" action="" id="contact-form">
+                <form method="post" id="contact-form" action="{{ route('home.send.contact') }}">
                     <div class="row clearfix">
                         <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                            <input type="text" name="username" placeholder="Your name" required>
+                            <label for="message" class="text-white">*</label>
+                            <input type="text" name="name" id="name"
+                                placeholder="{{ __('message.your_name') }}">
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                            <input type="email" name="email" placeholder="Your email" required>
+
+                            <label for="email" class="text-danger">*</label>
+                            <input type="email" name="email" id="email"
+                                @if (app()->getLocale() == 'da' || app()->getLocale() == 'pa') style="text-align: right !important;" @endif
+                                placeholder="{{ __('message.Your_email') }}" required>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                            <input type="text" name="phone" placeholder="Phone" required>
+                            <label for="message" class="text-white">*</label>
+                            <input type="text" name="phone" id="phone" placeholder="{{ __('message.phone') }}">
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                            <input type="text" name="subject" placeholder="Subject" required>
+                            <label for="subject" class="text-danger">*</label>
+                            <input type="text" name="subject" id="subject" placeholder="{{ __('message.subject') }}"
+                                required>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                            <textarea name="message" placeholder="Type message"></textarea>
+                            <label for="message" class="text-danger">*</label>
+                            <textarea name="message" id="message" placeholder="{{ __('message.your_message') }}" required></textarea>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn centred">
-                            <button type="submit" class="theme-btn" name="submit-form">Ask
-                                Question<span></span><span></span><span></span><span></span></button>
+
+                            <button class="btn btn-success btn-lg" type="submit" id="contact-send-btn">
+                                <span id="contact-btn-text">{{ __('message.ask_question') }}</span>
+                                <span id="contact-ajax-loading-btn" class="d-none">
+                                    <span>{{ __('message.sending') }}</span>
+                                    <span class="spinner-border spinner-border-sm" role="status"
+                                        aria-hidden="true"></span>
+                                </span>
+
+                            </button>
                         </div>
                     </div>
                 </form>

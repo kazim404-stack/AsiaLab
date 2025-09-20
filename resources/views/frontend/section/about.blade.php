@@ -45,7 +45,7 @@
                                 <div class="image-box">
                                     @if ($firstImage)
                                         <figure class="image mb_30">
-                                            <img src="{{ asset($firstImage->image) }}" alt="about-image-1">
+                                            <img src="{{ asset($firstImage->image) }}" alt="about-image-1" loading="lazy">
                                         </figure>
                                     @endif
 
@@ -61,7 +61,7 @@
 
                                 @if ($secondImage)
                                     <figure class="image mb_30">
-                                        <img src="{{ asset($secondImage->image) }}" alt="about-image-2">
+                                        <img src="{{ asset($secondImage->image) }}" alt="about-image-2" loading="lazy">
                                     </figure>
                                 @endif
 

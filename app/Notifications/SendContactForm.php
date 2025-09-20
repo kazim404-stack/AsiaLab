@@ -38,7 +38,7 @@ class SendContactForm extends Notification
         $mail = (new MailMessage)
             ->subject('🔬 New Inquiry – ' . $this->data['subject'])
             ->greeting('Dear Admin,')
-            ->line('You have received a new inquiry from your AsiaMed laboratory.')
+            ->line('You have received a new inquiry from your Asia Lab laboratory.')
             ->line('Here are the details:')
             ->line('---');
 
