@@ -22,6 +22,7 @@ use App\Http\Controllers\frontend\HomePageController;
 use App\Http\Controllers\frontend\LocalController;
 use App\Http\Controllers\MachineController;
 use App\Http\Middleware\LocalizationMiddleware;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 Route::get('locale/{lang}', [LocalController::class, 'setLocal']);
@@ -94,6 +95,14 @@ Route::middleware([LocalizationMiddleware::class])->group(function () {
     Route::get('gallery', [HomePageController::class, 'gallery'])->name('home.gallery');
     Route::get('service-details/{categoryId}', [HomePageController::class, 'serviceDetails'])->name('home.service.details');
     Route::get('search-product', [HomePageController::class, 'search'])->name('home.search.product');
+});
+Route::get('/clear-cache', function () {
+    Artisan::call('config:clear');
+    Artisan::call('cache:clear');
+    Artisan::call('route:clear');
+    Artisan::call('view:clear');
+    Artisan::call('config:cache');
+    return 'Laravel cache cleared';
 });
 
 
