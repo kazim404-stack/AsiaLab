@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-        <link rel="icon" href="{{ asset('backend/assets/images/favoicon.webp') }}" type="image/png" />
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'AsiaMed') }}</title>
+    <link rel="icon" href="{{ asset('backend/assets/images/favoicon.webp') }}" type="image/png" />
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <title>{{ config('app.name', 'AsiaMed') }}</title>
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
-            <div>
-                <a href="#">
-                   <img src="{{ asset('backend/assets/images/logo.webp') }}" width="100" alt="Asia-lab-logo">
-                </a>
-            </div>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
-                {{ $slot }}
-            </div>
+    <!-- Built CSS (replace with your actual file from public/build) -->
+    <link rel="stylesheet" href="{{ asset('build/assets/app-Bbn7gKQ2.css') }}">
+</head>
+<body class="font-sans text-gray-900 antialiased">
+    <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
+        <div>
+            <a href="#">
+               <img src="{{ asset('backend/assets/images/logo.webp') }}" width="100" alt="Asia-lab-logo">
+            </a>
         </div>
-    </body>
+
+        <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
+            {{ $slot }}
+        </div>
+    </div>
+
+    <!-- Built JS (replace with your actual file from public/build) -->
+    <script src="{{ asset('build/assets/app-DtCVKgHt.js') }}" defer></script>
+</body>
 </html>
