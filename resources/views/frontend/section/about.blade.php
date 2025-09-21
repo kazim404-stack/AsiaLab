@@ -26,7 +26,7 @@
                             </ul>
                         </div>
                         <div class="btn-box">
-                            <a href="about.html" class="theme-btn">{{__('message.contact Us')}}<span></span><span></span><span></span><span></span></a>
+                            <a href={{ route('home.contact') }}'message.contact Us')}}<span></span><span></span><span></span><span></span></a>
                         </div>
                     </div>
                 </div>
