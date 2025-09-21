@@ -77,7 +77,7 @@
             <div class="bottom-inner">
                 <div class="copyright">
                     @if (app()->getLocale() == 'en')
-                        <p>Copyright &copy; @php echo date('y') @endphp <a href="{{ route('home') }}">AsiaLab</a>, All Rights
+                        <p>Copyright &copy; @php echo date('Y') @endphp <a href="{{ route('home') }}">AsiaLab</a>, All Rights
                             Reserved</p>
                     @elseif(app()->getLocale() == 'da')
                         <p>کپی‌رایت &copy; @php echo date('Y') @endphp <a href="{{ route('home') }}">آسیا لب</a>، تمامی حقوق
