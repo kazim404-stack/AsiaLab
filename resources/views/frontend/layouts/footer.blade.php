@@ -92,25 +92,25 @@
                         <h4>{{ __('message.follow us on') }}</h4>
                     </li>
                     @if ($generalSetting->facebook)
-                        <li><a href="{{ $generalSetting->facebook }}"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="{{ $generalSetting->facebook }}" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
                     @endif
                     @if ($generalSetting->x)
-                        <li><a href="{{ $generalSetting->x }}"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="{{ $generalSetting->x }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
                     @endif
                     @if ($generalSetting->linkedin)
-                        <li><a href="{{ $generalSetting->linkedin }}"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="{{ $generalSetting->linkedin }}" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
                     @endif
                     @if ($generalSetting->instagram)
-                        <li><a href="{{ $generalSetting->instagram }}"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="{{ $generalSetting->instagram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
                     @endif
                     @if ($generalSetting->whatsapp)
-                        <li><a href="{{ $generalSetting->whatsapp }}"><i class="fab fa-whatsapp"></i></a></li>
+                        <li><a href="{{ $generalSetting->whatsapp }}" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
                     @endif
                     @if ($generalSetting->telegram)
-                        <li><a href="{{ $generalSetting->telegram }}"><i class="fab fa-telegram"></i></a></li>
+                        <li><a href="{{ $generalSetting->telegram }}" target="_blank"><i class="fab fa-telegram"></i></a></li>
                     @endif
                     @if ($generalSetting->youtube)
-                        <li><a href="{{ $generalSetting->youtube }}"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="{{ $generalSetting->youtube }}" target="_blank"><i class="fab fa-youtube"></i></a></li>
                     @endif
 
                 </ul>
