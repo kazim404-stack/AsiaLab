@@ -91,9 +91,7 @@
     <link href="{{ asset('frontend/assets/css/module-css/about.css') }}" rel="stylesheet">
 
     <link href="{{ asset('frontend/assets/css/module-css/service.css') }}" rel="stylesheet">
-    <link href="{{ asset('frontend/assets/css/module-css/clients.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/assets/css/module-css/working.css') }}" rel="stylesheet">
-    <link href="{{ asset('frontend/assets/css/module-css/events.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/assets/css/module-css/cta.css') }}" rel="stylesheet">
 
     <link href="{{ asset('frontend/assets/css/responsive.css') }}" rel="stylesheet">
