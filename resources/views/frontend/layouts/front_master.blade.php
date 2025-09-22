@@ -113,6 +113,7 @@
 <body>
     <div class="boxed_wrapper ltr">
         <!-- preloader -->
+        <!-- preloader -->
         @php
             if (app()->getLocale() == 'en') {
                 $slagon = ['A', 's', 'i', 'a', 'l', 'a', 'b'];
@@ -120,9 +121,10 @@
                 $slagon = ['آسیا لب'];
             }
         @endphp
-        <div class="loader-wrap">
+
+        <div class="loader-wrap" aria-hidden="true"
+            style="position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#fff;z-index:9999;">
             <div class="preloader">
-                <div class="preloader-close">close</div>
                 <div id="handle-preloader" class="handle-preloader">
                     <div class="animation-preloader">
                         <div class="spinner"></div>
@@ -132,13 +134,25 @@
                                     {{ $sla }}
                                 </span>
                             @endforeach
-
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <script>
+            // Remove preloader as soon as DOM is ready (not waiting for all assets)
+            document.addEventListener("DOMContentLoaded", () => {
+                const loader = document.querySelector(".loader-wrap");
+                if (loader) {
+                    loader.style.opacity = "0";
+                    loader.style.transition = "opacity 0.5s ease";
+                    setTimeout(() => loader.style.display = "none", 500);
+                }
+            });
+        </script>
+        <!-- preloader end -->
+
         <!-- preloader end -->
 
 
