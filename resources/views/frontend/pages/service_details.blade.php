@@ -16,7 +16,7 @@
             <div class="content-box">
                 <h2>{{ $category->getTranslation('name', app()->getLocale()) }}</h2>
                 <ul class="bread-crumb">
-                    <li><a href="index.html">{{ __('message.home') }}</a></li>
+                    <li><a href="{{ route('home') }}">{{ __('message.home') }}</a></li>
                     <li>-</li>
                     <li>{{ __('message.services_details') }}</li>
                 </ul>

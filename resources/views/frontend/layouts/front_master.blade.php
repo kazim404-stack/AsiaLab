@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html
     @if (app()->getLocale() == 'en') lang="en" dir="ltr" @elseif (app()->getLocale() == 'pa') lang="fa" dir="rtl" @else lang="ps" dir="rtl" @endif>
-
+    <!--
++--------------------------------------------------------------------------------------+
+|                               Developed by:                                          |
++-------------------------------------+------------------------------------------------+
+| Kazim Mohammadi (kazimmohammadi404@gmail.com) | Mahdy Ataey (ataey.2012@gmail.com)   |                               |
++-------------------------------------+------------------------------------------------+
+!-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
