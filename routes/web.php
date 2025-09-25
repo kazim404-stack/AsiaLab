@@ -14,7 +14,7 @@ use App\Http\Controllers\backend\PhoneController;
 use App\Http\Controllers\backend\PhotoController;
 use App\Http\Controllers\backend\ProvinceController;
 use App\Http\Controllers\backend\SliderController;
-use App\Http\Controllers\Backend\SliderImageController;
+use App\Http\Controllers\backend\SliderImageController;
 use App\Http\Controllers\backend\TestController;
 use App\Http\Controllers\backend\TestImageController;
 use App\Http\Controllers\backend\TestimonailController;
@@ -97,6 +97,7 @@ Route::middleware([LocalizationMiddleware::class])->group(function () {
     Route::get('search-product', [HomePageController::class, 'search'])->name('home.search.product');
 });
 Route::get('/clear-cache', function () {
+
     Artisan::call('config:clear');
     Artisan::call('cache:clear');
     Artisan::call('route:clear');
