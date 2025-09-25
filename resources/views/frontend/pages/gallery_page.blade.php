@@ -41,9 +41,11 @@
                         <div class="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all science chemistry material">
                             <div class="gallery-block-one">
                                 <div class="inner-box">
-                                    <figure class="image-box"><img src="{{ asset($gallery->image) }}" loading="lazy" alt="image-box-{{ $gallery->id }}">
+                                    <figure class="image-box"><img src="{{ asset($gallery->image) }}" loading="lazy"
+                                            alt="image-box-{{ $gallery->id }}">
                                     </figure>
-                                    <figure class="overlay-image"><img src="{{ asset($gallery->image) }}" loading="lazy" alt="overlay-image-{{ $gallery->id }}">
+                                    <figure class="overlay-image"><img src="{{ asset($gallery->image) }}" loading="lazy"
+                                            alt="overlay-image-{{ $gallery->id }}">
                                     </figure>
                                     <div class="view-btn"><a href="{{ asset($gallery->image) }}" class="lightbox-image"
                                             data-fancybox="gallery"><i class="icon-63"></i></a></div>
@@ -56,4 +58,7 @@
             </div>
         </div>
     </section>
+@endsection
+@section('about-js-links')
+    <script src="{{ asset('frontend/assets/js/isotope.js') }}"></script>
 @endsection

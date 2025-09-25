@@ -294,7 +294,7 @@
     <script src="{{ asset('frontend/assets/js/wow.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/jquery.fancybox.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/appear.js') }}"></script>
-    <script src="{{ asset('frontend/assets/js/isotope.js') }}"></script>
+
     <script src="{{ asset('frontend/assets/js/parallax-scroll.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/jquery.nice-select.min.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/jQuery.style.switcher.min.js') }}"></script>
