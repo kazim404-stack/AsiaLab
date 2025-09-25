@@ -59,6 +59,4 @@
         </div>
     </section>
 @endsection
-@section('about-js-links')
-    <script src="{{ asset('frontend/assets/js/isotope.js') }}"></script>
-@endsection
+

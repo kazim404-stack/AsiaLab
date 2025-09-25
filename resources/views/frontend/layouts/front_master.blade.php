@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html
     @if (app()->getLocale() == 'en') lang="en" dir="ltr" @elseif (app()->getLocale() == 'pa') lang="fa" dir="rtl" @else lang="ps" dir="rtl" @endif>
-    <!--
+<!--
 +--------------------------------------------------------------------------------------+
 |                               Developed by:                                          |
 +-------------------------------------+------------------------------------------------+
 | Kazim Mohammadi (kazimmohammadi404@gmail.com) | Mahdy Ataey (ataey.2012@gmail.com)   |                               |
 +-------------------------------------+------------------------------------------------+
 !-->
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -294,7 +295,7 @@
     <script src="{{ asset('frontend/assets/js/wow.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/jquery.fancybox.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/appear.js') }}"></script>
-
+    <script src="{{ asset('frontend/assets/js/isotope.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/parallax-scroll.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/jquery.nice-select.min.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/jQuery.style.switcher.min.js') }}"></script>
@@ -308,7 +309,24 @@
     @yield('contact-js')
 
     <!-- main-js -->
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+
     <script src="{{ asset('frontend/assets/js/script.js') }}"></script>
+    <script>
+        $(window).on('load', function() {
+            var $grid = $('.items-container').isotope({
+                itemSelector: '.masonry-item',
+                percentPosition: true,
+                masonry: {
+                    columnWidth: '.masonry-item'
+                }
+            });
+            $grid.imagesLoaded().progress(function() {
+                $grid.isotope('layout');
+            });
+        });
+    </script>
+
     <script src="{{ asset('backend/assets/dist/js/toastr.js') }}"></script>
     <script>
         @if (Session::has('message'))
