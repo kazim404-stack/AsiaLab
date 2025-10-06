@@ -436,7 +436,6 @@ $(document).ready(function () {
     $(document).on('click', '.edit-phone-btn', function (e) {
         e.preventDefault();
 
-
         let getUrl = $(this).attr("href");
         $.ajax({
             url: getUrl,
@@ -447,7 +446,7 @@ $(document).ready(function () {
                     select.empty();
                     response.contacts.forEach((item, index) => {
                         let selected = item.id == response.data.contact_id ? 'selected' : '';
-                        select.append(`<option value="${item.id}" ${selected}>${item.state.en}</option>`)
+                        select.append(`<option value="${item.id}" ${selected}>${item.email}</option>`)
                     });
 
                     $("#edit-phone-form [name='phone_number']").val(response.data.phone_number);

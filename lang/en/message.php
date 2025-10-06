@@ -39,7 +39,7 @@ return [
     "services_details" => "Services Details",
     "contact_info" => "Contact Info",
     "our_contact_details" => "Our Contact Details",
-    "our_branches" => "Our Branch",
+    "our_branches" => "Our Branches",
     "find_offices_near_you" => "Find our offices near you",
     "send_message" => "Send message",
     "get_in_touch" => "Get in Touch",

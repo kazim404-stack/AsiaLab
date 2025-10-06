@@ -7,7 +7,7 @@
            </div>
            <div class="auto-container">
                <div class="sec-title mb_70 centred sec-title-animation animation-style2">
-                   <span class="sub-title mb_20 title-animation">{{ __('message.faq_top_title') }}</span>
+                   {{-- <span class="sub-title mb_20 title-animation">{{ __('message.faq_top_title') }}</span> --}}
                    <h2 class="title-animation">{{ __('message.faq_title') }}</h2>
                </div>
                <div class="inner-container">

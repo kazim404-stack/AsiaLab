@@ -33,6 +33,8 @@
   border-radius: 10px;
   z-index: 1;
   margin-bottom: 30px;
+
+
 }
 
 .service-block-one .inner-box:before{
@@ -234,6 +236,7 @@
   top: 0px;
   right: 0px;
   border-radius: 10px;
+
 }
 
 .service-style-two .image-box .image{
@@ -315,7 +318,7 @@
 }
 
 .service-block-two .inner-box .content-box{
-  position: relative;    
+  position: relative;
   transform: translateY(124px);
   z-index: 5;
   -webkit-transition: all 0.5s cubic-bezier(0.4, 0.28, 0.31, 1.28) 0.2s;

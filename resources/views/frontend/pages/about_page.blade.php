@@ -1,8 +1,6 @@
 @extends('frontend.layouts.front_master')
 @section('about-links')
     <link href="{{ asset('frontend/assets/css/module-css/page-title.css') }}" rel="stylesheet">
-    <link href="{{ asset('frontend/assets/css/module-css/faq.css') }}" rel="stylesheet">
-    <link href="{{ asset('frontend/assets/css/module-css/testimonial.css') }}" rel="stylesheet">
 @endsection
 @section('homePage')
     <!-- main-content -->

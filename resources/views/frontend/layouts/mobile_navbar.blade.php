@@ -22,12 +22,9 @@
                      </div>
                      <div class="contact-info">
                          <h4>{{ __('message.contact_info') }}</h4>
-                         <ul>
-                             <li>{{ $contact->getTranslation('address',app()->getLocale()) }}</li>
-                             @foreach ($contact->phones as $phone)
-                                 <li class="footer-phone"><a href="tel:{{ $phone->phone_number }}" >{{ $phone->phone_number }}</a></li>
-                             @endforeach
-                             <li><a href="mailto:info@example.com">{{ $contact->email }}</a></li>
+                         <ul class="info clearfix">
+                             <li><a href="mailto:info@asialab.com">info@asialab.af</a></li>
+                             <li><a href="tel:+93799050222" class="footer-phone">+93799 050 222</a></li>
                          </ul>
                      </div>
                      <div class="social-links">

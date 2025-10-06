@@ -100,6 +100,8 @@
     <link href="{{ asset('frontend/assets/css/module-css/service.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/assets/css/module-css/working.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/assets/css/module-css/cta.css') }}" rel="stylesheet">
+    <link href="{{ asset('frontend/assets/css/module-css/faq.css') }}" rel="stylesheet">
+    <link href="{{ asset('frontend/assets/css/module-css/testimonial.css') }}" rel="stylesheet">
 
     <link href="{{ asset('frontend/assets/css/responsive.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/assets/css/custom.css') }}" rel="stylesheet">
@@ -133,14 +135,22 @@
             style="position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#fff;z-index:9999;">
             <div class="preloader">
                 <div id="handle-preloader" class="handle-preloader">
-                    <div class="animation-preloader">
+                    <div class="animation-preloader position-relative">
                         <div class="spinner"></div>
-                        <div class="txt-loading">
-                            @foreach ($slagon as $sla)
+                        <div class="txt-loading position-absolute" style="top: 15px; left: 15px;">
+                            @php
+                                $generalSetting = App\Models\GeneralSetting::first();
+                            @endphp
+                            <span class="letters-loading">
+                                <img src="{{ asset($generalSetting->logo) }}" alt="asia-lab-logo" width="120"
+                                    class="text-center">
+
+                            </span>
+                            {{-- @foreach ($slagon as $sla)
                                 <span data-text-preloader="{{ $sla }}" class="letters-loading">
                                     {{ $sla }}
                                 </span>
-                            @endforeach
+                            @endforeach --}}
                         </div>
                     </div>
                 </div>
@@ -154,7 +164,7 @@
                 if (loader) {
                     loader.style.opacity = "0";
                     loader.style.transition = "opacity 0.5s ease";
-                    setTimeout(() => loader.style.display = "none", 500);
+                    setTimeout(() => loader.style.display = "none", 1000);
                 }
             });
         </script>
@@ -201,25 +211,27 @@
                 @include('frontend.section.vision')
                 @include('frontend.section.mission')
                 @include('frontend.section.key_value')
+            @endif
+            <!-- about-section end -->
+            @if (request()->routeIs(['home']))
                 @include('frontend.section.faq')
                 @include('frontend.section.testimonail')
             @endif
-            <!-- about-section end -->
 
 
 
             <!-- service-section -->
-            @if (request()->routeIs(['home', 'home.service']))
+            @if (request()->routeIs(['home.service']))
                 @include('frontend.section.service')
             @endif
             <!-- service-section end -->
 
 
             <!-- clients-section -->
-            @if (request()->routeIs(['home', 'home.service', 'home.service.details']))
+            {{-- @if (request()->routeIs(['home', 'home.service', 'home.service.details']))
                 @include('frontend.section.client_section')
                 @include('frontend.section.machine_slider')
-            @endif
+            @endif --}}
 
             <!-- clients-section end -->
 

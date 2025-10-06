@@ -4,13 +4,13 @@
         <div class="header-top">
             <div class="auto-container">
                 <div class="top-inner">
-                    @if (app()->getLocale() == 'en')
+                    {{-- @if (app()->getLocale() == 'en')
                         <p><i class="icon-1"></i>Open Hours: Sat - Thur 8.00 am - 5.00 pm</p>
                     @elseif (app()->getLocale() == 'da')
                         <p><i class="icon-1"></i>ساعات کاری: شنبه تا پنجشنبه ۸:۰۰ صبح - ۵:۰۰ عصر</p>
                     @else
                         <p><i class="icon-1"></i>د کار وختونه: شنبه تر پنجشنبې ۸:۰۰ سهار - ۵:۰۰ ماښام</p>
-                    @endif
+                    @endif --}}
                     <ul class="social-links">
                         <li><span>{{ __('message.on social') }}:</span></li>
                         @if ($generalSetting->facebook)

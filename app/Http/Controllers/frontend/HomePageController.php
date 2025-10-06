@@ -41,7 +41,7 @@ class HomePageController extends Controller
     public function sendContact(StoreSendContactRequest $request)
     {
         $data = $request->validated();
-        Notification::route('mail', 'info@asiamedlab.af')->notify(new SendContactForm($data));
+        Notification::route('mail', 'info@asialab.af')->notify(new SendContactForm($data));
         return response()->json(["status" => "success", "message" => "Send Successfully"]);
     }
     public function search(Request $request)

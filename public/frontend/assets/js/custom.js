@@ -62,5 +62,11 @@ $(document).ready(function () {
 
     updateCategoryCols();
     window.addEventListener('resize', updateCategoryCols);
+    // year of experience
+    let startYear = 2017;
+    let currentYear = new Date().getFullYear();
+    let yearsOfExperience = currentYear - startYear;
+    document.getElementById("years-of-experience").innerHTML = yearsOfExperience + " <span>Years</span>";
+
 
 });

@@ -25,10 +25,10 @@
                                 <div class="row clearfix">
                                     <div
                                         class="col-lg-12 col-md-12 col-sm-12 single-column d-flex justify-content-center">
-                                        <figure class="image pt_100 mt_15">
+                                        <figure class="image  mt_25  text-center">
                                             @if($vision && $vision->aboutImages()->count() > 0)
                                             @foreach ($vision->aboutImages as $image)
-                                            <img src="{{ asset($image->image) }}" alt="vision-image" loading="lazy">
+                                            <img src="{{ asset($image->image) }}" alt="vision-image" loading="lazy" id="vision-image">
                                             @endforeach
                                             @endif
                                         </figure>

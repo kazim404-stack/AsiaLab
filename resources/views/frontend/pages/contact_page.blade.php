@@ -59,13 +59,32 @@
                                                 <h5 class="card-title fw-bold">{{ $contact->province->province }}</h5>
                                                 @foreach ($contact->phones as $phone)
                                                     @if (app()->getLocale() == 'en')
-                                                        <p class="card-text mb-2"><i
-                                                                class="fas fa-phone me-2 text-success"></i>{{ $phone->phone_number }}
+                                                        <p class="card-text mb-2">
+                                                            <a href="https://wa.me/{{ $phone->phone_number }}"><i
+                                                                class="fab fa-whatsapp me-2 text-success fa-2x"></i><span class="text-black">{{ $phone->phone_number }}</span></a>
                                                         </p>
+
+                                                        {{-- @if ($contact->phones->count() == 1)
+
+                                                            <a href="https://wa.me/{{ $phone->phone_number }}"
+                                                                target="_blank">
+                                                                <i class="fab fa-whatsapp text-success fa-3x ms-2"></i>
+                                                            </a>
+                                                        @elseif ($contact->phones->count() > 1 && $loop->last)
+                                                            <a href="https://wa.me/{{ $phone->phone_number }}"
+                                                                target="_blank">
+                                                                <i class="fab fa-whatsapp text-success fa-3x ms-2"></i>
+                                                            </a>
+                                                        @endif --}}
                                                     @else
                                                         <p class="card-text mb-2" style="direction: ltr !important;">
                                                             {{ $phone->phone_number }} <i
                                                                 class="fas fa-phone me-2 text-success"></i></p>
+                                                        <p class="card-text mb-2">
+                                                            <a href="https://wa.me/{{ $phone->phone_number }}"><i
+                                                                    class="fab fa-whatsapp text-success fa-3x"
+                                                                    target="_blank"></i></a>
+                                                        </p>
                                                     @endif
                                                 @endforeach
 

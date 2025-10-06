@@ -60,9 +60,9 @@
                                           </div>
                                       </ul>
                                   </li>
-                                  <li><a href="{{ route('home.gallery') }}"
+                                  {{-- <li><a href="{{ route('home.gallery') }}"
                                           class="{{ setActive(['home.gallery']) }}">{{ __('message.gallery') }}</a>
-                                  </li>
+                                  </li> --}}
                                   <li><a href="{{ route('home.contact') }}"
                                           class="{{ setActive(['home.contact']) }}">{{ __('message.contact Us') }}</a>
                                   </li>
@@ -76,15 +76,15 @@
                       </div>
                       <select name="lang" class="lang-select form-control">
                           <option {{ app()->getLocale() == 'en' ? 'selected' : '' }} value="{{ url('locale/en') }}"
-                              data-img="{{ asset('frontend/assets/images/en-us.svg') }}">
+                              >
                               {{ __('message.en') }}
                           </option>
                           <option {{ app()->getLocale() == 'da' ? 'selected' : '' }} value="{{ url('locale/da') }}"
-                              data-img="{{ asset('frontend/assets/images/afg.svg') }}">
+                             >
                               {{ __('message.da') }}
                           </option>
                           <option {{ app()->getLocale() == 'pa' ? 'selected' : '' }} value="{{ url('locale/pa') }}"
-                              data-img="{{ asset('frontend/assets/images/afg.svg') }}">
+                             >
                                  {{ __('message.pa') }}
                           </option>
                       </select>

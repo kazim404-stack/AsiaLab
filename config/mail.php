@@ -111,7 +111,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'info@asiamedlab.af'),
+        'address' => env('MAIL_FROM_ADDRESS', 'info@asialab.af'),
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 

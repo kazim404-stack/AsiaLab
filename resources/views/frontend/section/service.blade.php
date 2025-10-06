@@ -8,7 +8,7 @@
         </div>
         <div class="auto-container">
             <div class="sec-title centred mb_70 sec-title-animation animation-style2">
-                <span class="sub-title mb_20 title-animation">{{ __('message.our service') }}</span>
+                {{-- <span class="sub-title mb_20 title-animation">{{ __('message.our service') }}</span> --}}
                 <h2 class="title-animation">{{ __('message.we provide reliable services') }}</h2>
             </div>
             <div class="row clearfix">

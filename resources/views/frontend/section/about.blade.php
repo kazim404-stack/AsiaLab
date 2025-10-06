@@ -12,9 +12,9 @@
         <div class="row">
             <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                 <div class="content_block_one">
-                    <div class="content-box mt_25 mr_70 sec-title-animation animation-style2">
+                    <div class="content-box mt_25 mr_70">
                         <div class="sec-title mb_25">
-                            <span class="sub-title mb_20 title-animation">{{ __('message.laboratory') }}</span>
+                            {{-- <span class="sub-title mb_20 title-animation">{{ __('message.laboratory') }}</span> --}}
                             <h2 class="title-animation">{{ $about->getTranslation('title', app()->getLocale()) }}</h2>
                         </div>
                         <div class="text-box mb_45 title-animation">
@@ -25,9 +25,9 @@
                                 <li>{{ __('message.about_2') }}</li>
                             </ul>
                         </div>
-                        <div class="btn-box">
+                        {{-- <div class="btn-box">
                             <a href="{{ route('home.contact') }}" class="theme-btn">{{__('message.contact Us')}}<span></span><span></span><span></span><span></span></a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -51,7 +51,7 @@
 
                                     <div class="experience-box bounce-slide">
                                         <div class="inner p_relative pt_5 pb_5">
-                                            <h2>8 <span>Years</span></h2>
+                                            <h2 id="years-of-experience"></h2>
                                             <h3>Of Experience in the laboratory tests</h3>
                                         </div>
                                     </div>

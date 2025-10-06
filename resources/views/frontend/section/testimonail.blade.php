@@ -4,8 +4,8 @@
    <section class="testimonial-section pt_120 pb_120">
        <div class="auto-container">
            <div class="sec-title centred mb_70 sec-title-animation animation-style2">
-               <span class="sub-title mb_20 title-animation">{{ __('message.testimonails') }}</span>
-               <h2 class="title-animation">{{ __('message.love from clients') }}</h2>
+               {{-- <span class="sub-title mb_20 title-animation">{{ __('message.testimonails') }}</span> --}}
+               <h2 class="title-animation">{{  __('message.testimonails') }}</h2>
            </div>
            <div class="two-item-carousel owl-carousel owl-theme dots-style-one owl-nav-none testimonail-carousel">
                @foreach ($testimonails as $testimonail)

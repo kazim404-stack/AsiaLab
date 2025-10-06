@@ -19,7 +19,7 @@
 
                 <div class="auto-container">
                     <div class="content-box p_relative d_block z_5">
-                        <span class="sub-title">{{ __('message.laboratory') }}</span>
+                        {{-- <span class="sub-title">{{ __('message.laboratory') }}</span> --}}
                         <h2>{{ $slider->getTranslation('title', app()->getLocale()) }}</span></h2>
                         <p>{{ $slider->getTranslation('description', app()->getLocale()) }}</p>
                         <div class="btn-box">
