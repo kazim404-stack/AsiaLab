@@ -22,17 +22,17 @@
                                 <select name="lang" class="lang-select form-control">
                                     <option {{ app()->getLocale() == 'en' ? 'selected' : '' }}
                                         value="{{ url('locale/en') }}"
-                                        data-img="{{ asset('frontend/assets/images/en-us.svg') }}">
+                                       >
                                         English
                                     </option>
                                     <option {{ app()->getLocale() == 'da' ? 'selected' : '' }}
                                         value="{{ url('locale/da') }}"
-                                        data-img="{{ asset('frontend/assets/images/afg.svg') }}">
+                                        >
                                         Dari
                                     </option>
                                     <option {{ app()->getLocale() == 'pa' ? 'selected' : '' }}
                                         value="{{ url('locale/pa') }}"
-                                        data-img="{{ asset('frontend/assets/images/afg.svg') }}">
+                                      >
                                         Pashto
                                     </option>
                                 </select>
