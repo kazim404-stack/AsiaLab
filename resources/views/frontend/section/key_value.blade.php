@@ -6,7 +6,7 @@
         'fas fa-lightbulb',
         'fas fa-users',
         'fas fa-tools',
-        'as fa-user-shield',
+        'fas fa-user-shield',
     ];
 @endphp
 <section class="core-values-section">
