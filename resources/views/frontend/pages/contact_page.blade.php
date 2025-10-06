@@ -61,7 +61,8 @@
                                                     @if (app()->getLocale() == 'en')
                                                         <p class="card-text mb-2">
                                                             <a href="https://wa.me/{{ $phone->phone_number }}"><i
-                                                                class="fab fa-whatsapp me-2 text-success fa-2x"></i><span class="text-black">{{ $phone->phone_number }}</span></a>
+                                                                    class="fab fa-whatsapp me-2 text-success fa-2x"></i><span
+                                                                    class="text-black">{{ $phone->phone_number }}</span></a>
                                                         </p>
 
                                                         {{-- @if ($contact->phones->count() == 1)
@@ -77,13 +78,10 @@
                                                             </a>
                                                         @endif --}}
                                                     @else
-                                                        <p class="card-text mb-2" style="direction: ltr !important;">
-                                                            {{ $phone->phone_number }} <i
-                                                                class="fas fa-phone me-2 text-success"></i></p>
                                                         <p class="card-text mb-2">
                                                             <a href="https://wa.me/{{ $phone->phone_number }}"><i
-                                                                    class="fab fa-whatsapp text-success fa-3x"
-                                                                    target="_blank"></i></a>
+                                                                    class="fab fa-whatsapp me-2 text-success fa-2x"></i><span
+                                                                    class="text-black">&lrm;{{ $phone->phone_number }}</span></a>
                                                         </p>
                                                     @endif
                                                 @endforeach
@@ -107,22 +105,9 @@
             </div>
         </div>
     </section>
-    <!-- contact-info-section end -->
-
-
-
-    <section class="google-map-section">
-        <div class="container-fluid">
-            <div class="map-inner">
-                <div id="map" style="height: 400px;"></div>
-            </div>
-        </div>
-    </section>
-    <!-- google-map-section end -->
-
 
     <!-- contact-section -->
-    <section class="contact-section pt_120 pb_180">
+    <section class="contact-section  pb_180">
         <div class="auto-container">
             <div class="sec-title centred mb_70 sec-title-animation animation-style2">
                 <span class="sub-title mb_20 title-animation">{{ __('message.send_message') }}</span>
@@ -174,6 +159,18 @@
         </div>
     </section>
     <!-- contact-section end -->
+    <!-- contact-info-section end -->
+
+
+
+    <section class="google-map-section">
+        <div class="container-fluid">
+            <div class="map-inner">
+                <div id="map" style="height: 400px;"></div>
+            </div>
+        </div>
+    </section>
+    <!-- google-map-section end -->
 @endsection
 @section('contact-js')
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
