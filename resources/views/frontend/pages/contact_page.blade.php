@@ -61,7 +61,7 @@
                                                     @if (app()->getLocale() == 'en')
                                                         <p class="card-text mb-2">
                                                             <a href="https://wa.me/{{ $phone->phone_number }}"><i
-                                                                    class="fab fa-whatsapp me-2 text-success fa-2x"></i><span
+                                                                    class="fab fa-whatsapp me-2 text-success fa-lg"></i><span
                                                                     class="text-black">{{ $phone->phone_number }}</span></a>
                                                         </p>
 
@@ -80,7 +80,7 @@
                                                     @else
                                                         <p class="card-text mb-2">
                                                             <a href="https://wa.me/{{ $phone->phone_number }}"><i
-                                                                    class="fab fa-whatsapp me-2 text-success fa-2x"></i><span
+                                                                    class="fab fa-whatsapp me-2 text-success fa-lg"></i><span
                                                                     class="text-black">&lrm;{{ $phone->phone_number }}</span></a>
                                                         </p>
                                                     @endif
