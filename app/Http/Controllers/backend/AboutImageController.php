@@ -44,7 +44,6 @@ class AboutImageController extends Controller
                 AboutImage::create([
                     "about_us_id" => $validatedData['about_us_id'],
                     "image" => $validatedData['image'],
-
                 ]);
             }
         }
