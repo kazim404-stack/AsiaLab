@@ -34,6 +34,7 @@ class AboutImageController extends Controller
      */
     public function store(StoreAboutImageRequest $request, $aboutId)
     {
+
         $validatedData = $request->validated();
         if ($request->hasFile('image')) {
             foreach ($request->file('image') as $image) {

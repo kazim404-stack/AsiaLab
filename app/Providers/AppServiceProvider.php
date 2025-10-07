@@ -21,8 +21,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        App::bind('path.public', function () {
-            return base_path('../public_html/asialab/public');
-        });
+        $realPublicPath = base_path('../public_html/asialab/public');
+
+        if (is_dir($realPublicPath)) {
+            App::bind('path.public', function () use ($realPublicPath) {
+                return $realPublicPath;
+            });
+        }
     }
 }
