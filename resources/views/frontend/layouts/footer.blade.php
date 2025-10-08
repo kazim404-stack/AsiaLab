@@ -12,7 +12,7 @@
     $chunks = $categories->chunk(ceil($categories->count() / 3));
 
 @endphp
-<footer class="main-footer">
+<footer class="main-footer" >
     <div class="bg-layer" style="background-image: url({{ asset('frontend/assets/images/background/footer-bg.jpg') }});">
     </div>
     <div class="auto-container">

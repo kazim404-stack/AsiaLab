@@ -2449,9 +2449,9 @@ button.rtl {
     padding-top: 130px;
 }
 
-.main-content.alternat-2 {
+/* .main-content.alternat-2 {
     margin-bottom: 690px;
-}
+} */
 
 
 /** header-style-four **/
@@ -2509,5 +2509,11 @@ button.rtl {
         cursor: pointer !important;
         background: var(--secondary-color) !important;
         display: block !important;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .main-footer {
+        position: relative !important;
     }
 }
