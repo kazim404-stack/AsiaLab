@@ -51,6 +51,8 @@ return [
     "ask_question" => "سوال بپرسید",
     "type_your_keyword_and_hit" => "متن خود را تایپ کنید و اینتر را بزنید",
     'sending' => 'در حال ارسال...',
+    'all' => 'همه',
+
 
 
 

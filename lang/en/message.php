@@ -50,7 +50,8 @@ return [
     "your_message" => "Your Message",
     "ask_question" => "Ask Question",
     "type_your_keyword_and_hit" => "Type your keyword and hit",
-    "sending" => "Sending"
+    "sending" => "Sending",
+    'all' => 'All',
 
 
 

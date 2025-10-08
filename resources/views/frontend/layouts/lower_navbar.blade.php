@@ -60,9 +60,9 @@
                                           </div>
                                       </ul>
                                   </li>
-                                  {{-- <li><a href="{{ route('home.gallery') }}"
+                                  <li><a href="{{ route('home.gallery') }}"
                                           class="{{ setActive(['home.gallery']) }}">{{ __('message.gallery') }}</a>
-                                  </li> --}}
+                                  </li>
                                   <li><a href="{{ route('home.contact') }}"
                                           class="{{ setActive(['home.contact']) }}">{{ __('message.contact Us') }}</a>
                                   </li>

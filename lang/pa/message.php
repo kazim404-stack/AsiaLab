@@ -52,5 +52,6 @@ return [
     "ask_question" => "پوښتنه وکړئ",
     "type_your_keyword_and_hit" => "خپل کليمه ټايپ کړئ او اينټر کيکاږئ",
     'sending' => 'لیږل کېږي...',
+    'all' => 'ټول'
 
 ];

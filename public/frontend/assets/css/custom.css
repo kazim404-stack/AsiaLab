@@ -103,3 +103,6 @@
 .service-block-one .inner-box{
     min-height:  300px !important;
 }
+.filter-btns li.active {
+    color: white !important;
+}
