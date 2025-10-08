@@ -17,7 +17,6 @@ class TestImageController extends Controller
         $testImages = TestImage::where('test_id',$testId)->get();
         return view('admin.testImage.index', compact('testId', 'testImages'));
     }
-
     /**
      * Show the form for creating a new resource.
      */

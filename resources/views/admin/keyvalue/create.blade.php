@@ -36,7 +36,7 @@
                                     <label for="description-{{ $local }}"
                                         class="col-form-label">Description</label>
                                     <textarea name="description[{{ $local }}]" placeholder="Enter description in {{ $label }}"
-                                        id="description[{{ $local }}]" class="form-control" cols="1" rows="1"></textarea>
+                                        id="key-value-description[{{ $local }}]" class="form-control" cols="1" rows="1"></textarea>
                                 </div>
                             </div>
                         @endforeach

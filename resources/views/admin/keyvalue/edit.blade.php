@@ -37,7 +37,7 @@
                                     <label for="description-{{ $local }}"
                                         class="col-form-label">Description</label>
                                     <textarea name="description[{{ $local }}]" placeholder="Enter description in {{ $label }}"
-                                        id="description[{{ $local }}]" class="form-control" cols="1" rows="1"></textarea>
+                                        id="edit-key-value-description[{{ $local }}]" class="form-control" cols="1" rows="1"></textarea>
                                 </div>
                             </div>
                         @endforeach
@@ -49,7 +49,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary" id="update-keyValue"><i
-                        class="fas fa-file">&nbsp;</i>Store</button>
+                        class="fas fa-file">&nbsp;</i>Update</button>
             </div>
         </div>
     </div>
