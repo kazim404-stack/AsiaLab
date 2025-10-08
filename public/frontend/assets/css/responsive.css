@@ -364,7 +364,7 @@
   }
 
   .main-footer .footer-top .top-inner{
-    display: block;
+    display: block !important;
   }
 
   .main-footer .footer-top .top-inner .footer-logo{
