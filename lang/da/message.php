@@ -1,7 +1,7 @@
 <?php
 return [
     "home" => "خانه",
-    "about Us" => "در مورد ما",
+    "about Us" => "در باره ما",
     "service" => "خدمات",
     "contact Us" => "تماس با ما",
     "slagon" => "تشخیص برای یک زندگی سالم",
