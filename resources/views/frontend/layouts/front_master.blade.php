@@ -159,20 +159,6 @@
 
         <script>
             // Remove preloader as soon as DOM is ready (not waiting for all assets)
-
-            document.addEventListener("DOMContentLoaded", () => {
-                const loader = document.querySelector(".loader-wrap");
-                if (loader) {
-                    setTimeout(() => {
-                        loader.style.opacity = "0";
-                        loader.style.transition = "opacity 0.5s ease";
-                        setTimeout(() => loader.style.display = "none", 1000);
-
-                    },240000);
-
-                }
-            });
-
             document.addEventListener("DOMContentLoaded", () => {
                 const loader = document.querySelector(".loader-wrap");
                 if (loader) {
