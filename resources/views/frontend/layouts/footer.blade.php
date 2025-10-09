@@ -47,7 +47,7 @@
                 </div>
 
                 @foreach ($chunks as $chunk)
-                    <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                    <div class="col-lg-3 col-md-6 col-sm-12 footer-column service-column">
                         <div class="footer-widget links-widget">
                             <div class="widget-title">
                                 <h3>{{ __('message.service') }}</h3>
@@ -74,13 +74,13 @@
             <div class="bottom-inner">
                 <div class="copyright">
                     @if (app()->getLocale() == 'en')
-                        <p>Copyright &copy; @php echo date('Y') @endphp <a href="{{ route('home') }}">AsiaLab</a>, All Rights
+                        <p>Copyright &copy; @php echo date('Y') @endphp <a href="{{ route('home') }}">AsiaLaboratory</a>, All Rights
                             Reserved</p>
                     @elseif(app()->getLocale() == 'da')
-                        <p>کپی‌رایت &copy; @php echo date('Y') @endphp <a href="{{ route('home') }}">آسیا لب</a>، تمامی حقوق
+                        <p>کپی‌رایت &copy; @php echo date('Y') @endphp <a href="{{ route('home') }}">آسیا لابراتوار</a>، تمامی حقوق
                             محفوظ است</p>
                     @else
-                        <p>کاپي‌رایټ &copy; @php echo date('Y') @endphp <a href="{{ route('home') }}">آسیا لب</a>، ټول حقوق محفوظ
+                        <p>کاپي‌رایټ &copy; @php echo date('Y') @endphp <a href="{{ route('home') }}">آسیا لابراتوار</a>، ټول حقوق محفوظ
                             دي</p>
                     @endif
                 </div>
