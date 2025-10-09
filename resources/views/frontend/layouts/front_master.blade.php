@@ -137,7 +137,7 @@
                 <div id="handle-preloader" class="handle-preloader">
                     <div class="animation-preloader position-relative">
                         <div class="spinner"></div>
-                        <div class="txt-loading position-absolute" style="top: 15px; left: 15px;">
+                        <div class="txt-loading position-absolute loading-logo">
                             @php
                                 $generalSetting = App\Models\GeneralSetting::first();
                             @endphp
@@ -159,6 +159,20 @@
 
         <script>
             // Remove preloader as soon as DOM is ready (not waiting for all assets)
+
+            document.addEventListener("DOMContentLoaded", () => {
+                const loader = document.querySelector(".loader-wrap");
+                if (loader) {
+                    setTimeout(() => {
+                        loader.style.opacity = "0";
+                        loader.style.transition = "opacity 0.5s ease";
+                        setTimeout(() => loader.style.display = "none", 1000);
+
+                    },240000);
+
+                }
+            });
+
             document.addEventListener("DOMContentLoaded", () => {
                 const loader = document.querySelector(".loader-wrap");
                 if (loader) {

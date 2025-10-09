@@ -29,3 +29,25 @@
     font-display: swap !important;
 }
 
+.loading-logo {
+    top: 15px;
+    left: 15px;
+}
+
+@media (max-width: 768px) {
+    .loading-logo {
+        left: 25px !important;
+    }
+
+    .letters-loading img {
+        width: 80px !important;
+    }
+
+}
+
+@media (max-width: 576px) {
+    .loading-logo {
+        left: 16px !important;
+    }
+
+}
