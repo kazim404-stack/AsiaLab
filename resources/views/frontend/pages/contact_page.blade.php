@@ -122,7 +122,6 @@
                                 placeholder="{{ __('message.your_name') }}">
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-
                             <label for="email" class="text-danger">*</label>
                             <input type="email" name="email" id="email"
                                 @if (app()->getLocale() == 'da' || app()->getLocale() == 'pa') style="text-align: right !important;" @endif

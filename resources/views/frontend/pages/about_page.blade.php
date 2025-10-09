@@ -16,7 +16,7 @@
             <div class="content-box">
                 <h2>{{ __('message.about Us') }}</h2>
                 <ul class="bread-crumb">
-                    <li><a href="index.html">{{ __('message.home') }}</a></li>
+                    <li><a href="{{ route('home') }}">{{ __('message.home') }}</a></li>
                     <li>-</li>
                     <li>{{ __('message.about Us') }}</li>
                 </ul>
