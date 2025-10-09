@@ -24,7 +24,7 @@
                     <li><a href="{{ route('home') }}">{{ __('message.home') }}</a></li>
                     <li><a href="{{ route('home.about') }}">{{ __('message.about Us') }}</a></li>
                     <li><a href="{{ route('home.service') }}">{{ __('message.service') }}</a></li>
-                    <li><a href="{{ route('home.gallery') }}">{{ __('message.gallery') }}</a></li>
+                    {{-- <li><a href="{{ route('home.gallery') }}">{{ __('message.gallery') }}</a></li> --}}
                     <li><a href="{{ route('home.contact') }}">{{ __('message.contact Us') }}</a></li>
                 </ul>
             </div>

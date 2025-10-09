@@ -68,7 +68,7 @@
                                 id="content-{{ $slug }}" role="tabpanel">
                                 <div class="text-box mb_35">
                                     <h2>{{ $test->getTranslation('name', app()->getLocale()) }}</h2>
-                                    <p>{!! $test->getTranslation('description', app()->getLocale()) !!}</p>
+                                    <p class="text-justify">{!! $test->getTranslation('description', app()->getLocale()) !!}</p>
                                 </div>
                                 @foreach ($test->testImages as $image)
                                     <figure class="image-box mb_35">
