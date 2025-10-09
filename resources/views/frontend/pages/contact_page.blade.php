@@ -107,7 +107,7 @@
     </section>
 
     <!-- contact-section -->
-    <section class="contact-section  pb_180">
+    <section class="contact-section mb-5">
         <div class="auto-container">
             <div class="sec-title centred mb_70 sec-title-animation animation-style2">
                 <span class="sub-title mb_20 title-animation">{{ __('message.send_message') }}</span>
