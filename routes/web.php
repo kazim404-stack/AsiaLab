@@ -26,6 +26,27 @@ use App\Http\Middleware\LocalizationMiddleware;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
+
+use Spatie\Sitemap\Sitemap;
+use Spatie\Sitemap\Tags\Url;
+use App\Models\Category;
+
+Route::get('/sitemap.xml', function () {
+    $sitemap = Sitemap::create()
+        ->add(Url::create('/'))
+        ->add(Url::create('/about'))
+        ->add(Url::create('/service'))
+        ->add(Url::create('/contact'))
+        ->add(Url::create('/gallery'))
+        ->add(Url::create('/search-product'));
+    $categories = Category::all();
+    foreach ($categories as $category) {
+        $sitemap->add(Url::create("/service-details/{$category->id}"));
+    }
+
+    return $sitemap->toResponse(request());
+});
+
 Route::get('locale/{lang}', [LocalController::class, 'setLocal']);
 
 // Route::get('/', function () {
@@ -81,7 +102,7 @@ Route::prefix('admin')->as('admin.')->middleware(['auth', 'verified'])->group(fu
     Route::resource('testimonails', TestimonailController::class);
     Route::resource('faqs', FaqController::class);
     Route::resource('photos', PhotoController::class);
-    Route::resource('gallery',GalleryController::class);
+    Route::resource('gallery', GalleryController::class);
 });
 
 // home routes

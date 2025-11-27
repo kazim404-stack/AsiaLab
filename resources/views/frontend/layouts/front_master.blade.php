@@ -13,11 +13,47 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="google-site-verification" content="I-MaQSF-htVobr5642B-ESD8EpAh1jcVN4bI1zhcKJM" />
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <meta name="description"
-        content="Asia Lab offers trusted laboratory testing in Histology, Hematology, Pathology, Biochemistry, PCR, Microbiology, Virology, Immunology, and more.">
-    <meta name="keywords"
-        content="Asia Lab, Laboratory, Histology, Hematology, Pathology, Biochemistry, PCR, Microbiology, Virology, Immunology, Cytology, Parasitology, Serology, Screening, Mycology, Vaccination, Endocrinology">
+    <!-- Meta Description -->
+
+
+    <!-- Meta Description & Keywords  -->
+
+    @php
+        $meta = [
+            'description' => [
+                'en' =>
+                    'Asia Lab offers trusted laboratory testing in Histology, Hematology, Pathology, Biochemistry, PCR, Microbiology, Virology, Immunology, and more.',
+                'da' =>
+                    'آزمایشگاه آسیا، خدمات معتبر آزمایشگاهی در هیستولوژی، هماتولوژی، پاتولوژی، بیوشیمی، PCR، میکروب‌شناسی، ویروس‌شناسی، ایمونولوژی و دیگر زمینه‌ها ارائه می‌دهد.',
+                'pa' =>
+                    'د آسيا لاب ازموينځی د هیستولوجي، هیماټولوجي، پاتولوجي، بیوشیمي، PCR، مایکروبیولوژي، ویروسولوژي، ایمونولوژي او نورو باوري لابراتور ازموینو خدمتونه وړاندې کوي.',
+            ],
+            'keywords' => [
+                'en' =>
+                    'Asia Lab, Laboratory, Histology, Hematology, Pathology, Biochemistry, PCR, Microbiology, Virology, Immunology, Cytology, Parasitology, Serology, Screening, Mycology, Vaccination, Endocrinology',
+                'da' =>
+                    'آسیا لاب، آزمایشگاه، هیستولوژی، هماتولوژی، پاتولوژی، بیوشیمی، PCR، میکروب‌شناسی، ویروس‌شناسی، ایمونولوژی، سیتولوژی، پارازیتولوژی، سرولوژی، اسکرینینگ، میکولوژی، واکسیناسیون، اندوکرینولوژی',
+                'pa' =>
+                    'Asia Lab، لابراتور، هیستولوجي، هیماټولوجي، پاتولوجي، بیوشیمي، PCR، مایکروبیولوژي، ویروسولوژي، ایمونولوژي، سایتولوژي، پارازیتولوژي، سرولوژي، سکرینینګ، مایکولوژي، واکسین، اندوکرینولوژي',
+            ],
+        ];
+    @endphp
+
+    <!-- Meta Description -->
+
+    <meta name="description" content="{{ $meta['description']['da'] }}" lang="da">
+    <meta name="description" content="{{ $meta['description']['pa'] }}" lang="pa">
+    <meta name="description" content="{{ $meta['description']['en'] }}" lang="en">
+
+    <!-- Meta Keywords -->
+
+    <meta name="keywords" content="{{ $meta['keywords']['da'] }}" lang="da">
+    <meta name="keywords" content="{{ $meta['keywords']['pa'] }}" lang="pa">
+    <meta name="keywords" content="{{ $meta['keywords']['en'] }}" lang="en">
+
+
     <title>Asia Lab</title>
     <!-- Fav Icon -->
     <link rel="icon" href="{{ asset('backend/assets/images/favoicon.webp') }}" type="image/webp" />
