@@ -12,7 +12,7 @@
     $chunks = $categories->chunk(ceil($categories->count() / 3));
 
 @endphp
-<footer class="main-footer" >
+<footer class="main-footer">
     <div class="bg-layer" style="background-image: url({{ asset('frontend/assets/images/background/footer-bg.jpg') }});">
     </div>
     <div class="auto-container">
@@ -74,13 +74,19 @@
             <div class="bottom-inner">
                 <div class="copyright">
                     @if (app()->getLocale() == 'en')
-                        <p>Copyright &copy; @php echo date('Y') @endphp <a href="{{ route('home') }}">AsiaLaboratory</a>, All Rights
-                            Reserved</p>
+                        <p>
+                            Copyright © @php echo date('Y') @endphp
+                            <a href="{{ route('home') }}">Asia Laboratory</a>
+                            (also known as Asia Lab, AsiaLab, asia lab)
+                            – All Rights Reserved.
+                        </p>
                     @elseif(app()->getLocale() == 'da')
-                        <p>کپی‌رایت &copy; @php echo date('Y') @endphp <a href="{{ route('home') }}">آسیا لابراتوار</a>، تمامی حقوق
+                        <p>کپی‌رایت &copy; @php echo date('Y') @endphp <a href="{{ route('home') }}">آسیا لابراتوار</a>، تمامی
+                            حقوق
                             محفوظ است</p>
                     @else
-                        <p>کاپي‌رایټ &copy; @php echo date('Y') @endphp <a href="{{ route('home') }}">آسیا لابراتوار</a>، ټول حقوق محفوظ
+                        <p>کاپي‌رایټ &copy; @php echo date('Y') @endphp <a href="{{ route('home') }}">آسیا لابراتوار</a>، ټول
+                            حقوق محفوظ
                             دي</p>
                     @endif
                 </div>

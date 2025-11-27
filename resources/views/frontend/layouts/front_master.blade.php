@@ -16,11 +16,12 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <!-- Meta Description -->
     <meta name="description" lang="en"
-        content="Asia Lab,Asia Lab,asia lab AsiaLab asialab,Asia Lab Laboratory,asia lab Laboratory , AsiaLab,Laboratory, asialab Laboratory,Asia Lab laboratory,asia lab laboratory , AsiaLab,laboratory, asialab laboratory, offers trusted laboratory testing in Histology, Hematology, Pathology, Biochemistry, PCR, Microbiology, Virology, Immunology, and more.">
+        content="Asia Lab is a trusted medical laboratory offering advanced services such as Histology, Hematology, Pathology, PCR, Microbiology, Virology, Immunology, and more.">
 
     <!-- Meta Keywords -->
     <meta name="keywords" lang="en"
-        content="Asia Lab,asia lab AsiaLab asialab,Asia Lab Laboratory,asia lab Laboratory , AsiaLab,Laboratory, asialab Laboratory,Asia Lab laboratory,asia lab laboratory , AsiaLab,laboratory, asialab laboratory, Histology, Hematology, Pathology, Biochemistry, PCR, Microbiology, Virology, Immunology, Cytology, Parasitology, Serology, Screening, Mycology, Vaccination, Endocrinology">
+        content="Asia Lab, medical laboratory, diagnostic center, histology, hematology, PCR test, microbiology">
+
     <title>Asia Lab</title>
     <!-- Fav Icon -->
     <link rel="icon" href="{{ asset('backend/assets/images/favoicon.webp') }}" type="image/webp" />
