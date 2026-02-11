@@ -289,7 +289,6 @@
                     else $(this).text(optText);
                 });
             }
-
             $('.lang-select').each(function() {
                 var $sel = $(this);
                 decorateNiceSelect($sel);

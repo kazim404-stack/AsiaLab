@@ -76,7 +76,7 @@
                                         </a>
                                     </div>
                                     <div class="text-box">
-                                        <h3>{{ $gallery->getTranslation('branch_name', app()->getLocale()) }}</h3>
+                                        <h3 style="color: #fff !important;">{{ $gallery->getTranslation('branch_name', app()->getLocale()) }}</h3>
                                         <p>{{ __('message.laboratory') }}</p>
                                     </div>
                                 </div>
