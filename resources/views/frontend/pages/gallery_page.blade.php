@@ -27,67 +27,74 @@
                         <ul class="filter-tabs filter-btns clearfix">
                             <li class="active filter" data-role="button" data-filter=".all">{{ __('message.all') }}</li>
                             @foreach ($contacts as $contact)
-                                <li class="filter" data-role="button"
-                                    data-filter=".{{ Str::slug($contact->getTranslation('state', app()->getLocale())) }}">
-                                    {{ $contact->getTranslation('state', app()->getLocale()) }}
-                                </li>
+                                @if ($contact->galleries->count() > 0 || $contact->video_links)
+                                    <li class="filter" data-role="button"
+                                        data-filter=".{{ Str::slug($contact->getTranslation('state', app()->getLocale())) }}">
+                                        {{ $contact->getTranslation('state', app()->getLocale()) }}
+                                    </li>
+                                @endif
                             @endforeach
                         </ul>
+
                     </div>
 
                     <div class="items-container row clearfix">
                         @foreach ($contacts as $contact)
-                            @foreach ($contact->galleries as $gallery)
-                                <div
-                                    class="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all
-                {{ Str::slug($contact->getTranslation('state', app()->getLocale())) }}">
-                                    <div class="gallery-block-one">
-                                        <div class="inner-box">
-                                            <figure class="image-box">
-                                                <img src="{{ asset($gallery->image) }}"
-                                                    alt="{{ $contact->getTranslation('state', app()->getLocale()) }}">
-                                            </figure>
-                                            <div class="view-btn">
-                                                <a href="{{ asset($gallery->image) }}" class="lightbox-image"
-                                                    data-fancybox="gallery">
-                                                    <i class="icon-63"></i>
-                                                </a>
-                                            </div>
-                                            <div class="text-box mt-3">
-                                                <h3 style="color: #fff !important;">
-                                                    {{ $contact->getTranslation('state', app()->getLocale()) }}
-                                                </h3>
-                                                <p>{{ __('message.laboratory') }}</p>
+                            @if ($contact->galleries->count() > 0 || $contact->video_links)
+                                {{-- عکس‌ها --}}
+                                @foreach ($contact->galleries as $gallery)
+                                    <div
+                                        class="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all
+                    {{ Str::slug($contact->getTranslation('state', app()->getLocale())) }}">
+                                        <div class="gallery-block-one">
+                                            <div class="inner-box">
+                                                <figure class="image-box">
+                                                    <img src="{{ asset($gallery->image) }}"
+                                                        alt="{{ $contact->getTranslation('state', app()->getLocale()) }}">
+                                                </figure>
+                                                <div class="view-btn">
+                                                    <a href="{{ asset($gallery->image) }}" class="lightbox-image"
+                                                        data-fancybox="gallery">
+                                                        <i class="icon-63"></i>
+                                                    </a>
+                                                </div>
+                                                <div class="text-box mt-3">
+                                                    <h3 style="color: #fff !important;">
+                                                        {{ $contact->getTranslation('state', app()->getLocale()) }}
+                                                    </h3>
+                                                    <p>{{ __('message.laboratory') }}</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            @endforeach
+                                @endforeach
 
-                            @if ($contact->video_links)
-                                <div
-                                    class="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all
-    {{ Str::slug($contact->getTranslation('state', app()->getLocale())) }}">
-                                    <div class="gallery-block-one h-100">
-                                        <div class="inner-box h-100 position-relative">
-                                            <figure class="image-box">
-                                                <a data-bs-toggle="modal" data-bs-target="#videoModal{{ $contact->id }}">
-                                                    <img src="https://img.youtube.com/vi/{{ Str::after($contact->video_links, 'watch?v=') }}/hqdefault.jpg"
-                                                        alt="Video thumbnail" class="img-fluid w-100 h-100"
-                                                        style="object-fit:cover;">
-                                                    <span class="play-btn">
-                                                        <i class="fab fa-youtube fa-3x"></i>
-                                                    </span>
-                                                </a>
-                                            </figure>
+                                {{-- ویدیو --}}
+                                @if ($contact->video_links)
+                                    <div
+                                        class="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all
+                    {{ Str::slug($contact->getTranslation('state', app()->getLocale())) }}">
+                                        <div class="gallery-block-one h-100">
+                                            <div class="inner-box h-100 position-relative">
+                                                <figure class="image-box">
+                                                    <a data-bs-toggle="modal"
+                                                        data-bs-target="#videoModal{{ $contact->id }}">
+                                                        <img src="https://img.youtube.com/vi/{{ Str::after($contact->video_links, 'watch?v=') }}/hqdefault.jpg"
+                                                            alt="Video thumbnail" class="img-fluid w-100 h-100"
+                                                            style="object-fit:cover;">
+                                                        <span class="play-btn">
+                                                            <i class="fab fa-youtube fa-3x"></i>
+                                                        </span>
+                                                    </a>
+                                                </figure>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                @endif
                             @endif
                         @endforeach
                     </div>
 
-                    {{-- مودال‌ها بیرون از کانتینر --}}
 
 
 
