@@ -265,6 +265,10 @@
             @endif
             <!-- working-section end -->
         </main>
+        @php
+            use App\Models\Contact;
+            $contacts = Contact::with('galleries')->get();
+        @endphp
         @foreach ($contacts as $contact)
             @if ($contact->video_links)
                 <div class="modal fade" id="videoModal{{ $contact->id }}" tabindex="-1" aria-hidden="true">
@@ -412,7 +416,7 @@
 
     <script src="{{ asset('frontend/assets/js/custom.js') }}"></script>
 
-{{-- for gallery video --}}
+    {{-- for gallery video --}}
     <script>
         document.querySelectorAll('.modal').forEach(modal => {
             modal.addEventListener('show.bs.modal', function() {
