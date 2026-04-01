@@ -34,6 +34,7 @@ class UpdateContactRequest extends FormRequest
                 'max:255',
                 Rule::unique('contacts', 'email')->ignore($contactId),
             ],
+            'video_links' => ['nullable', 'url'],
 
             // State must be an array with translations
 
@@ -41,6 +42,10 @@ class UpdateContactRequest extends FormRequest
             // Address must be an array with translations
             'address' => ['required', 'array'],
             'address.*' => ['required', 'string', 'max:255'],
+            // state must be an array with transaltion
+
+            'state' => ['required', 'array'],
+            'state.*' => ['required', 'string', 'max:255'],
 
             'status' => ['nullable', 'in:0,1'],
         ];
@@ -71,6 +76,13 @@ class UpdateContactRequest extends FormRequest
             'address.*.required'  => 'Each address translation is required.',
             'address.*.string'    => 'Each address translation must be a string.',
             'address.*.max'       => 'Each address translation must not exceed 255 characters.',
+
+            //state message
+            'state.required'    => 'The state field is required.',
+            'state.array'       => 'The state must be an array of translations.',
+            'state.*.required'  => 'Each state translation is required.',
+            'state.*.string'    => 'Each state translation must be a string.',
+            'state.*.max'       => 'Each state translation must not exceed 255 characters.',
 
             'status.in' => 'Status must be either 0 (inactive) or 1 (active).',
         ];

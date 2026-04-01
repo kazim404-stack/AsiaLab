@@ -24,12 +24,15 @@ class StoreContactRequest extends FormRequest
         return [
             'general_setting_id' => 'required|exists:general_settings,id',
             'province_id' => 'required|exists:provinces,id',
-            'email'              => 'required|email|max:255|unique:contacts,email',
+            'email' => 'required|email|max:255|unique:contacts,email',
+            'video_links' => 'nullable|url',
 
 
             // Address must be an array with translations
             'address' => ['required', 'array'],
             'address.*' => ['required', 'string', 'max:255'],
+            'state' => ['required', 'array'],
+            'state.*' => ['required', 'string', 'max:255'],
             'status'             => 'nullable|in:0,1',
         ];
     }
@@ -55,6 +58,14 @@ class StoreContactRequest extends FormRequest
             'address.*.required'  => 'Each address translation is required.',
             'address.*.string'    => 'Each address translation must be a string.',
             'address.*.max'       => 'Each address translation must not exceed 255 characters.',
+
+
+            //state message
+            'state.required'    => 'The state field is required.',
+            'state.array'       => 'The state must be an array of translations.',
+            'state.*.required'  => 'Each state translation is required.',
+            'state.*.string'    => 'Each state translation must be a string.',
+            'state.*.max'       => 'Each state translation must not exceed 255 characters.',
 
             'status.in'                   => 'Status must be either 0 (inactive) or 1 (active).',
         ];

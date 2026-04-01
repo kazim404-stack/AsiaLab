@@ -13,15 +13,17 @@
                     enctype="multipart/form-data">
                     @csrf
                     <div class="row">
-                        @foreach ($languages as $local => $lable)
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="slider-image" class="col-form-label">Select branch</label>
-                                    <input type="text" class="form-control" id="branch_name[{{ $local }}]" name="branch_name[{{ $local }}]"
-                                        placeholder="Enter branch name in {{ $lable }}">
-                                </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="contact_id" class="col-form-label">Select contact</label>
+                                <select name="contact_id" id="contact_id" class="form-control">
+                                    @foreach ($contacts as $contact)
+                                    <option value="{{ $contact->id }}">{{  $contact->getTranslation('state','en')  }}</option>
+                                    @endforeach
+                                </select>
+
                             </div>
-                        @endforeach
+                        </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="image" class="col-form-label">Image</label>

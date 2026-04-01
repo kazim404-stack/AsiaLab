@@ -1,6 +1,6 @@
 @php
     $languages = ['en' => 'English', 'da' => 'Dari', 'pa' => 'Pashto'];
-    
+
 @endphp
 <div class="modal fade" id="create-contact" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -29,13 +29,13 @@
                                 <label for="province" class="col-form-label">Province</label>
                                 <select name="province_id" id="province_id" class="form-control">
                                     @foreach ($provinces as $province)
-                                    <option value="{{ $province->id }}">{{ $province->province }}</option>
+                                        <option value="{{ $province->id }}">{{ $province->province }}</option>
                                     @endforeach
                                 </select>
                             </div>
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="mb-3">
                                 <label for="email" class="col-form-label">Email</label>
                                 <input type="text" class="form-control" id="email" name="email"
@@ -52,7 +52,21 @@
                                         placeholder="Enter address in {{ $label }}"></textarea>
                                 </div>
                             </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="state[{{ $local }}]" class="col-form-label">State</label>
+                                    <textarea class="form-control" name="state[{{ $local }}]" id="state[{{ $local }}]"
+                                        placeholder="Enter state in {{ $label }}"></textarea>
+                                </div>
+                            </div>
                         @endforeach
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="video_links" class="col-form-label">Video link</label>
+                                <input type="url" class="form-control" id="video_links" name="video_links"
+                                    placeholder="Enter video links">
+                            </div>
+                        </div>
                         <div class="col-md-12">
                             <div class="mb-3">
                                 <label for="status" class="col-form-label">Status</label>

@@ -292,6 +292,7 @@ $(document).ready(function () {
                 if (response.status == "success") {
                     window.availableLanguages.forEach(lang => {
                         $("#edit-contact-form [name='address[" + lang + "]']").val(response.data.address?.[lang] ?? '');
+                        $("#edit-contact-form [name='state[" + lang + "]']").val(response.data.state?.[lang] ?? '');
                     });
                     let select = $("#edit-contact-form [name='province_id']");
                     select.empty();
@@ -300,6 +301,7 @@ $(document).ready(function () {
                         select.append(`<option value="${province.id}" ${selected}>${province.province.en}</option>`)
 
                     });
+                    $("#edit-contact-form [name='video_links']").val(response.data.video_links);
                     $("#edit-contact-form [name='email']").val(response.data.email);
                     $("#edit-contact-form [name='general_setting_id']").val(response.generalSetting.id);
                     $('#edit-contact-form p.form-control-plaintext').text(response.generalSetting.site_name);

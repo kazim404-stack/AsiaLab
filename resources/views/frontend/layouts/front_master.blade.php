@@ -118,6 +118,26 @@
     @endif
     <link href="{{ asset('backend/assets/dist/css/toastr.css') }}" rel="stylesheet" />
     <link href="{{ asset('frontend/assets/css/common.css') }}" rel="stylesheet">
+    {{-- for gallery video --}}
+    <style>
+        .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: red;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        .play-btn i {
+            pointer-events: none;
+            /* فقط کلیک روی لینک اصلی */
+        }
+    </style>
+
 
 </head>
 <!-- page wrapper -->
@@ -245,6 +265,33 @@
             @endif
             <!-- working-section end -->
         </main>
+        @foreach ($contacts as $contact)
+            @if ($contact->video_links)
+                <div class="modal fade" id="videoModal{{ $contact->id }}" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-xl modal-dialog-centered">
+                        <div class="modal-content bg-dark">
+                            <div class="modal-header">
+                                <h5 class="modal-title text-white">
+                                    {{ $contact->getTranslation('state', app()->getLocale()) }} - Video
+                                </h5>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body p-0">
+                                <div class="ratio ratio-16x9">
+                                    <iframe id="videoIframe{{ $contact->id }}"
+                                        src="{{ str_replace('watch?v=', 'embed/', $contact->video_links) }}"
+                                        title="YouTube video" allow="autoplay; encrypted-media" allowfullscreen>
+                                    </iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endif
+        @endforeach
+
+
         <!-- main-content end -->
 
 
@@ -364,6 +411,32 @@
     </script>
 
     <script src="{{ asset('frontend/assets/js/custom.js') }}"></script>
+
+{{-- for gallery video --}}
+    <script>
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('show.bs.modal', function() {
+                let iframe = modal.querySelector('iframe');
+                if (iframe) {
+                    let src = iframe.getAttribute('src');
+                    if (!src.includes('autoplay=1')) {
+                        iframe.setAttribute('src', src + '?autoplay=1');
+                    }
+                }
+            });
+
+            modal.addEventListener('hidden.bs.modal', function() {
+                let iframe = modal.querySelector('iframe');
+                if (iframe) {
+                    iframe.setAttribute('src', iframe.getAttribute('src').replace('?autoplay=1', ''));
+                }
+            });
+        });
+    </script>
+
+
+
+
 
 
 

@@ -22,8 +22,7 @@ class StoreGalleryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'branch_name' => 'required|array',
-            'branch_name.*' => 'required|string|max:255',
+            'contact_id' => 'required|exists:contacts,id',
             'image' => 'required|array|max:5',
             'image.*'    => 'required|image|max:2048|mimes:jpg,jpeg,png,gif,bmp,webp,svg',
         ];
@@ -31,11 +30,8 @@ class StoreGalleryRequest extends FormRequest
     public function messages()
     {
         return [
-            'branch_name.required' => 'The branch name field is required.',
-            'branch_name.array' => 'The branch name must be an array of translations.',
-            'branch_name.*.required' => 'Each branch name translation is required.',
-            'branch_name.*.string' => 'Each branch name must be a string.',
-            'branch_name.*.max' => 'Each branch name must not exceed 255 characters.',
+            'contact.required' => 'The contact field is required.',
+            'contact.exists'   => 'The selected contact is invalid.',
             'image.required' => 'Please select at least one image.',
             'image.*.required' => 'The image name field is required.',
             'image.*.image'       => 'Each file must be a valid image.',

@@ -8,8 +8,9 @@ use Spatie\Translatable\HasTranslations;
 class Gallery extends Model
 {
     use HasTranslations;
-    protected $fillable = ['branch_name', 'image'];
-    public $translatable = [
-        'branch_name'
-    ];
+    protected $fillable = ['contact_id', 'image'];
+    public function contact()
+    {
+        return $this->belongsTo(Contact::class);
+    }
 }

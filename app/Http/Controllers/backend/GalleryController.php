@@ -4,6 +4,7 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreGalleryRequest;
+use App\Models\Contact;
 use App\Models\Gallery;
 use Illuminate\Http\Request;
 
@@ -14,8 +15,9 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        $galleries = Gallery::all();
-        return view('admin.gallery.index', compact('galleries'));
+        $galleries = Gallery::with('contact')->get();
+        $contacts = Contact::all();
+        return view('admin.gallery.index', compact('galleries','contacts'));
     }
 
     /**
@@ -39,7 +41,7 @@ class GalleryController extends Controller
                 $image->move(public_path("backend/assets/images/gallery/"), $imageName);
                 $validatedData['image'] = $imagePath;
                 Gallery::create([
-                    "branch_name" => $validatedData['branch_name'],
+                    "contact_id" => $validatedData['contact_id'],
                     "image" => $validatedData['image'],
                 ]);
             }

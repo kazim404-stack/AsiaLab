@@ -12,10 +12,12 @@ class Contact extends Model
         "general_setting_id",
         "province_id",
         "email",
+        "state",
+        "video_links",
         'address',
         'status',
     ];
-    public $translatable = ['address'];
+    public $translatable = ['address','state'];
     public function phones()
     {
         return $this->hasMany(Phone::class);
@@ -26,5 +28,8 @@ class Contact extends Model
     }
     public function province(){
         return $this->belongsTo(Province::class);
+    }
+    public function galleries(){
+        return $this->hasMany(Gallery::class);
     }
 }

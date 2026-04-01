@@ -31,7 +31,10 @@ class ContactsDataTable extends DataTable
                 return $query->generalSetting ? $query->generalSetting->site_name : '';
             })->addColumn('province', function ($query) {
                 return $query->province ? $query->province->getTranslation('province', 'en'): '';
-            })->addColumn('address', function ($query) {
+            })->addColumn('state', function ($query) {
+                return $query->getTranslation('state', 'en');
+            })
+            ->addColumn('address', function ($query) {
                 return $query->getTranslation('address', 'en');
             })->addColumn('status', function ($query) {
                 return $query->status == 1 ? '<span class="badge bg-success text-white">Active</span>' : '<span class="badge bg-warning text-white">Inactive</span>';
@@ -81,6 +84,7 @@ class ContactsDataTable extends DataTable
             Column::make('site_name'),
             Column::make('province'),
             Column::make('email'),
+            Column::make('state'),
             Column::make('address'),
             Column::make('status'),
             Column::computed('action')

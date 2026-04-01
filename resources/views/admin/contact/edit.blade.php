@@ -21,7 +21,7 @@
 
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="mb-3">
                                 <label for="email" class="col-form-label">Email</label>
                                 <input type="text" class="form-control" id="email" name="email"
@@ -47,7 +47,21 @@
                                         placeholder="Enter address in {{ $label }}"></textarea>
                                 </div>
                             </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="state[{{ $local }}]" class="col-form-label">State</label>
+                                    <textarea class="form-control" name="state[{{ $local }}]" id="state[{{ $local }}]"
+                                        placeholder="Enter state in {{ $label }}"></textarea>
+                                </div>
+                            </div>
                         @endforeach
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="video_links" class="col-form-label">Video link</label>
+                                <input type="url" class="form-control" id="video_links" name="video_links"
+                                    placeholder="Enter video links">
+                            </div>
+                        </div>
                         <div class="col-md-12">
                             <div class="mb-3">
                                 <label for="status" class="col-form-label">Status</label>
