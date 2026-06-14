@@ -1,7 +1,7 @@
 @php
     use App\Models\Contact;
 
-    // بهتر است ارتباط contact را eager load کنیم
+
     $contacts = Contact::with('galleries')->get();
 @endphp
 
@@ -22,7 +22,7 @@
 
             @if ($contacts && $contacts->count() > 0)
                 <div class="sortable-masonry">
-                    {{-- دکمه‌های فیلتر --}}
+
                     <div class="filters centred mb_50">
                         <ul class="filter-tabs filter-btns clearfix">
                             <li class="active filter" data-role="button" data-filter=".all">{{ __('message.all') }}</li>
@@ -41,7 +41,7 @@
                     <div class="items-container row clearfix">
                         @foreach ($contacts as $contact)
                             @if ($contact->galleries->count() > 0 || $contact->video_links)
-                                {{-- عکس‌ها --}}
+
                                 @foreach ($contact->galleries as $gallery)
                                     <div
                                         class="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all
@@ -69,7 +69,7 @@
                                     </div>
                                 @endforeach
 
-                                {{-- ویدیو --}}
+
                                 @if ($contact->video_links)
                                     <div
                                         class="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all
@@ -94,13 +94,6 @@
                             @endif
                         @endforeach
                     </div>
-
-
-
-
-
-
-
                 </div>
             @else
                 <p>Gallery is empty ...</p>
