@@ -272,7 +272,7 @@
         @foreach ($contacts as $contact)
             @if ($contact->video_links)
                 <div class="modal fade" id="videoModal{{ $contact->id }}" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog modal-md modal-dialog-centered">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
                         <div class="modal-content bg-dark">
                             <div class="modal-header">
                                 <h5 class="modal-title text-white">
