@@ -31,7 +31,7 @@
         </div>
         <div class="widget-section">
             <div class="row clearfix">
-                <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-6 footer-column">
                     <div class="footer-widget about-widget">
                         <div class="widget-title">
                             <h3>{{ __('message.about Us') }}</h3>
@@ -47,7 +47,7 @@
                 </div>
 
                 @foreach ($chunks as $chunk)
-                    <div class="col-lg-3 col-md-6 col-sm-12 footer-column service-column">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-6 footer-column service-column">
                         <div class="footer-widget links-widget">
                             <div class="widget-title">
                                 <h3>{{ __('message.service') }}</h3>
