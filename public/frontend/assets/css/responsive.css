@@ -251,7 +251,7 @@
   }
 
   .main-content.alternat-2{
-    margin-bottom: 0px;
+    margin-bottom: 0px !important;
   }
 
   .image_block_three .image-box{

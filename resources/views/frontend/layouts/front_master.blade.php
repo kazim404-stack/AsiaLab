@@ -134,7 +134,7 @@
 
         .play-btn i {
             pointer-events: none;
-            /* فقط کلیک روی لینک اصلی */
+
         }
     </style>
 
@@ -428,7 +428,6 @@
                     }
                 }
             });
-
             modal.addEventListener('hidden.bs.modal', function() {
                 let iframe = modal.querySelector('iframe');
                 if (iframe) {
@@ -437,14 +436,6 @@
             });
         });
     </script>
-
-
-
-
-
-
-
-
 </body><!-- End of .page_wrapper -->
 
 
