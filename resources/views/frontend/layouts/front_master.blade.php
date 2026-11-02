@@ -145,7 +145,6 @@
 <body>
     <div class="boxed_wrapper ltr">
         <!-- preloader -->
-        <!-- preloader -->
         @php
             if (app()->getLocale() == 'en') {
                 $slagon = ['A', 's', 'i', 'a', 'l', 'a', 'b'];
