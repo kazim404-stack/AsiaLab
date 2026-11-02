@@ -83,28 +83,47 @@
 .main-menu .dropdown-menu .row {
     justify-content: flex-start;
 }
-.dropdown-menu li a:hover{
+
+.dropdown-menu li a:hover {
     color: #00ff6a !important;
     background-color: #153d99;
 }
-.outer-box{
+
+.outer-box {
     border-radius: 0 !important;
 }
-.text-justify{
+
+.text-justify {
     text-align: justify;
 }
-.active{
+
+.active {
     color: #37AA67 !important;
 }
-#vision-image,#mission-image{
+
+#vision-image,
+#mission-image {
     width: 300px !important;
     height: 300px !important;
 }
-.service-block-one .inner-box{
-    min-height:  300px !important;
+
+.service-block-one .inner-box {
+    min-height: 300px !important;
 }
+
 .filter-btns li.active {
     color: white !important;
 }
 
 
+@media (max-width:576px) {
+    .mobile-menu .nav-logo {
+        padding-bottom: 25px !important;
+    }
+
+    .mobile-menu .contact-info {
+        padding: 30px 30px 20px 30px !important;
+    }
+
+
+}
