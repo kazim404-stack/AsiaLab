@@ -1,7 +1,7 @@
        @php
            $faqs = App\Models\Faq::where('status', 1)->get();
        @endphp
-       <section class="faq-section pt_120 pb_120">
+       <section class="faq-section pt_80 pb_80">
            <div class="pattern-layer">
                <div class="pattern-1" style="background-image: url({{ asset('frontend/assets/images/shape/shape-17.png') }});"></div>
            </div>

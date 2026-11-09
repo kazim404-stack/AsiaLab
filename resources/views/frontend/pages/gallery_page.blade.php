@@ -1,18 +1,31 @@
 @php
     use App\Models\Contact;
-
-
     $contacts = Contact::with('galleries')->get();
 @endphp
-
 @extends('frontend.layouts.front_master')
-
 @section('about-links')
     <link href="{{ asset('frontend/assets/css/module-css/page-title.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/assets/css/module-css/gallery.css') }}" rel="stylesheet">
 @endsection
 
 @section('homePage')
+    <section class="page-title centred">
+        <img class="bg-layer" src="{{ asset('frontend/assets/images/background/page-title-5.jpg') }}" alt="about-title-1"
+            loading="eager" fetchpriority="high">
+        <div class="overlay"></div>
+        <img class="pattern-layer" src="{{ asset('frontend/assets/images/shape/shape-53.png') }}" alt="about-title-2"
+            loading="eager" fetchpriority="high">
+        <div class="auto-container">
+            <div class="content-box">
+                <h2>{{ __('message.contact Us') }}</h2>
+                <ul class="bread-crumb">
+                    <li><a href="{{ route('home') }}">{{ __('message.home') }}</a></li>
+                    <li>-</li>
+                    <li>{{ __('message.gallery') }}</li>
+                </ul>
+            </div>
+        </div>
+    </section>
     <section class="gallery-section">
         <div class="auto-container">
             <div class="sec-title centred mb_70">
@@ -41,7 +54,6 @@
                     <div class="items-container row clearfix">
                         @foreach ($contacts as $contact)
                             @if ($contact->galleries->count() > 0 || $contact->video_links)
-
                                 @foreach ($contact->galleries as $gallery)
                                     <div
                                         class="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all

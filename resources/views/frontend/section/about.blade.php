@@ -4,7 +4,7 @@
     $secondImage = $about->aboutImages->get(1);
 @endphp
 <!-- about-style-two -->
-<section class="about-style-two pt_120 pb_120">
+<section class="about-style-two pt_80 pb_80">
     <div class="pattern-layer">
         <div class="pattern-2" style="background-image: url(frontend/assets/images/shape/shape-14.png);"></div>
     </div>

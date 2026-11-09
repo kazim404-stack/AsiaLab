@@ -162,7 +162,7 @@
             autoplay: bannerCount > 1,
             autoplayTimeout: 6000,
             navText: ['<span class="icon-6"></span>', '<span class="icon-7"></span>'],
-            autoHeight: true,
+            autoHeight: false,
             responsive: {
                 0: { items: 1 },
                 600: { items: 1 },

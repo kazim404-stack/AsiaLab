@@ -1,7 +1,7 @@
    @php
        $testimonails = App\Models\Testimonail::where('status', 1)->get();
    @endphp
-   <section class="testimonial-section pt_120 pb_120">
+   <section class="testimonial-section pt_80 pb_80">
        <div class="auto-container">
            <div class="sec-title centred mb_70 sec-title-animation animation-style2">
                {{-- <span class="sub-title mb_20 title-animation">{{ __('message.testimonails') }}</span> --}}

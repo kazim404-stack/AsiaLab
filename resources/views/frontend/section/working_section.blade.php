@@ -1,4 +1,4 @@
-            <section class="working-section centred pt_120 pb_80">
+            <section class="working-section centred pt_80 pb_80">
                 <div class="bg-layer parallax-bg" data-parallax='{"y": 100}'
                     style="background-image: url({{ asset('frontend/assets/images/background/working-bg.jpg') }});"></div>
                 <div class="auto-container">

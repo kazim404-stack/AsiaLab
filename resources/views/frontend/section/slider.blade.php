@@ -14,9 +14,6 @@
 
                 <img src="{{ asset('frontend/assets/images/shape/shape-1.png') }}" alt="shape-1" class="pattern-layer"
                     aria-hidden="true" loading="eager" fetchpriority="high" />
-
-
-
                 <div class="auto-container">
                     <div class="content-box p_relative d_block z_5">
                         {{-- <span class="sub-title">{{ __('message.laboratory') }}</span> --}}

@@ -32,7 +32,7 @@
     <!-- page-title end -->
 
     <!-- contact-info-section -->
-    <section class="contact-info-section pt_120 pb_90 centred">
+    <section class="contact-info-section pt_80 pb_80 centred">
         <div class="auto-container">
             <div class="sec-title mb_70 sec-title-animation animation-style2">
                 <span class="sub-title mb_20 title-animation">{{ __('message.contact_info') }}</span>
@@ -165,7 +165,7 @@
     <section class="google-map-section">
         <div class="container-fluid">
             <div class="map-inner">
-                <div id="map" style="height: 400px;"></div>
+                <div id="map" style="height: 500px; !important;"></div>
             </div>
         </div>
     </section>
