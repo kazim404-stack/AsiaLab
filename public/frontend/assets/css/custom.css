@@ -144,6 +144,9 @@
     align-items: center;
 }
 
+.image_block_two {
+    margin-top: 160px !important;
+}
 
 @media (max-width:576px) {
     .mobile-menu .nav-logo {
@@ -152,6 +155,38 @@
 
     .mobile-menu .contact-info {
         padding: 30px 30px 20px 30px !important;
+    }
+
+    .about-style-two {
+        padding: 20px 0 !important;
+    }
+
+    .image_block_two {
+        margin-top: 0 !important;
+    }
+
+    .image-shape {
+        display: none;
+    }
+
+    .faq-section {
+        padding: 40px 0 !important;
+    }
+
+    .testimonial-section {
+        padding: 40px 0 !important;
+    }
+    .core-values-section{
+        padding: 40px 0 !important;
+    }
+    .gallery-section{
+        padding: 40px 0 !important;
+    }
+    .contact-info-section{
+        padding: 40px 0 !important;
+    }
+    .contact-section{
+        padding: 40px 0 !important;
     }
 
 

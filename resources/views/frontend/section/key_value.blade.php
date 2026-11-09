@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 mb-5">
-                <div class="sec-title mb_70 centred sec-title-animation animation-style2">
+                <div class="sec-title mb_50 centred sec-title-animation animation-style2">
                     <h2 class="title-animation core-value-title">{{ __('message.core_value') }}</h2>
                 </div>
             </div>

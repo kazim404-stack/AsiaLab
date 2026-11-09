@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-                <div class="image_block_two" style="margin-top: 162px !important;">
+                <div class="image_block_two">
                     <div class="image-inner">
                         <div class="image-shape">
                             <img class="shape-1" src="{{ asset('frontend/assets/images/shape/shape-12.png') }}"

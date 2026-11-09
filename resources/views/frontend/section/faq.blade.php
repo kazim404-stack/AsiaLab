@@ -6,7 +6,7 @@
                <div class="pattern-1" style="background-image: url({{ asset('frontend/assets/images/shape/shape-17.png') }});"></div>
            </div>
            <div class="auto-container">
-               <div class="sec-title mb_70 centred sec-title-animation animation-style2">
+               <div class="sec-title mb_50 centred sec-title-animation animation-style2">
                    {{-- <span class="sub-title mb_20 title-animation">{{ __('message.faq_top_title') }}</span> --}}
                    <h2 class="title-animation">{{ __('message.faq_title') }}</h2>
                </div>
