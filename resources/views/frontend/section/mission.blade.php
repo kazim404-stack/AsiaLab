@@ -1,12 +1,12 @@
         @php
             $mission = App\Models\AboutUs::with('aboutImages')->where('type','mission')->first();
         @endphp
-        <section class="about-style-two pt_20 pb_20">
+        <section class="about-style-two pt_20 pb_80">
             <div class="pattern-layer">
                 <div class="pattern-2" style="background-image: url(frontend/assets/images/shape/shape-14.png);"></div>
             </div>
             <div class="auto-container">
-                <div class="row">
+                <div class="row d-flex justify-content-center align-items-center">
                     <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                         <div class="content_block_one">
                             <div class="content-box mt_25 mr_70 sec-title-animation animation-style2">
@@ -20,15 +20,15 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-                        <div class="image_block_two d-flex justify-content-center">
+                        <div class="d-flex justify-content-center">
                             <div class="image-inner">
                                 <div class="row clearfix">
                                     <div
                                         class="col-lg-12 col-md-12 col-sm-12 single-column d-flex justify-content-center">
-                                        <figure class="image mt_25 text-center">
+                                        <figure class="image text-center">
                                             @if($mission && $mission->aboutImages()->count() > 0)
                                             @foreach ($mission->aboutImages as $image)
-                                            <img src="{{ asset($image->image) }}" alt="vision-image" loading="lazy" id="mission-image">
+                                            <img src="{{ asset($image->image) }}" alt="vision-image" loading="lazy" id="mission-image" class="rounded-3">
                                             @endforeach
                                             @endif
                                         </figure>
